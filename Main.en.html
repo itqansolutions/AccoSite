@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Cardiac Medical Travel | Egypt</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;family=Noto+Kufi+Arabic:wght@500;700&amp;family=Readex+Pro:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid #7A8CFF;outline-offset:2px}
+</style>
+</helmet>
+<div dir="ltr" style="{{themeVars}} background: var(--bg); color: var(--ink); font-family: var(--fb); font-size: 17px; line-height: 1.7; width: 100%">
+
+<div style="background: var(--ink); color: var(--bg); padding: 8px 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; font-size: 13px">
+<span>Visual direction preview</span>
+<button onClick="{{setNile}}" style="font: inherit; font-size: 13px; padding: 4px 14px; border: 1px solid var(--bg); cursor: pointer; background: {{bgN}}; color: {{fgN}}">Nile Green & Sand</button>
+<button onClick="{{setEd}}" style="font: inherit; font-size: 13px; padding: 4px 14px; border: 1px solid var(--bg); cursor: pointer; background: {{bgE}}; color: {{fgE}}">Medical Editorial</button>
+</div>
+
+<div style="background: var(--soft); border-bottom: 1px solid var(--line); padding: 10px 24px; text-align: center; font-size: 15px">
+<strong style="font-weight: 600">Medical emergency?</strong> If you have severe chest pain or difficulty breathing, contact local emergency services now. Do not wait for this website.
+</div>
+
+<div style="width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px">
+
+<header style="display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; padding: 24px 0; border-bottom: 1px solid var(--line)">
+<div style="display: flex; flex-direction: column; line-height: 1.2">
+<span style="font-family: var(--fd); font-weight: 600; font-size: 24px; color: var(--primary)">[Parent Company Name]</span>
+<span style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted)">CARDIAC CARE · EGYPT</span>
+</div>
+<nav style="display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 15px; font-weight: 500">
+<a href="#specialties" style="text-decoration: none">Specialties</a>
+<a href="#doctors" style="text-decoration: none">Doctors & Hospitals</a>
+<a href="#included" style="text-decoration: none">What’s Included</a>
+<a href="#costs" style="text-decoration: none">Costs</a>
+<a href="#faq" style="text-decoration: none">FAQs</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 16px">
+<a href="Main.dc.html" lang="ar" style="font-size: 14px; color: var(--muted); text-decoration: underline">العربية</a>
+<a href="Request.dc.html" style="text-decoration: none; background: var(--accent); color: #FFFFFF; padding: 12px 22px; font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center">Request an Initial Medical Assessment</a>
+</div>
+</header>
+
+<section style="display: flex; flex-wrap: wrap; gap: 48px; padding: 72px 0 64px; align-items: flex-start">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<span style="font-size: 13px; letter-spacing: 0.1em; color: var(--muted)">An initial medical review, with no commitment to travel</span>
+<h1 style="margin: 0; font-family: var(--fd); font-weight: 600; font-size: 54px; line-height: 1.3; color: var(--primary); text-wrap: balance">Share your medical reports and understand your options before deciding to travel</h1>
+<p style="margin: 0; max-width: 560px; color: var(--muted)">A cardiac team in Egypt reviews your file and provides written preliminary feedback and clear options. There is no fee for this step. If you choose to proceed, our team coordinates treatment, accommodation and transport through your return home.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center">
+<a href="Request.dc.html" style="text-decoration: none; background: var(--accent); color: #FFFFFF; padding: 16px 32px; font-weight: 600; font-size: 18px; min-height: 52px; display: inline-flex; align-items: center">Request an Initial Medical Assessment</a>
+<span style="font-size: 14px; color: var(--muted)">It takes about 5 minutes to get started</span>
+</div>
+</div>
+
+<div style="flex: 1 1 400px; min-width: 0; border-top: 3px solid var(--primary); padding-top: 20px">
+<div style="font-family: var(--fd); font-weight: 600; font-size: 20px; color: var(--primary); margin-bottom: 8px">What happens after you submit your file</div>
+<div style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line)"><span style="flex: 0 0 110px; font-weight: 600; font-size: 15px">Same day</span><span style="flex: 1; min-width: 0">You receive a reference number and the name of your case coordinator.</span></div>
+<div style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line)"><span style="flex: 0 0 110px; font-weight: 600; font-size: 15px">Within 48 business hours*</span><span style="flex: 1; min-width: 0">We check that your file is complete and forward it to the appropriate medical team.</span></div>
+<div style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line)"><span style="flex: 0 0 110px; font-weight: 600; font-size: 15px">After review</span><span style="flex: 1; min-width: 0">Written preliminary feedback and potential options. The decision is yours.</span></div>
+<div style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line)"><span style="flex: 0 0 110px; font-weight: 600; font-size: 15px">If you choose to proceed</span><span style="flex: 1; min-width: 0">A detailed quotation, followed by travel, treatment and post-return coordination.</span></div>
+<div style="font-size: 13px; color: var(--muted); padding-top: 12px">* Proposed service target; must be confirmed before launch.</div>
+</div>
+</section>
+
+<section style="display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; padding: 24px 28px; background: var(--surface); border: 1px solid var(--line)">
+<div style="width: 64px; height: 64px; border: 2px dashed var(--line); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--muted); text-align: center; line-height: 1.3">Coordinator photo</div>
+<div style="flex: 1 1 280px; min-width: 0">
+<div style="font-weight: 600">Your personal coordinator: [Full name]</div>
+<div style="font-size: 15px; color: var(--muted)">Your coordinator follows your case from the first message through post-return follow-up. Published response time: [approved service level].</div>
+</div>
+<div style="display: flex; flex-direction: column; font-size: 15px"><span style="color: var(--muted)">WhatsApp</span><span dir="ltr" style="font-weight: 600; text-align: left">+20 [رقم المنسق]</span></div>
+</section>
+
+<section id="trust" style="padding: 80px 0 24px">
+<h2 style="margin: 0 0 8px; font-family: var(--fd); font-weight: 600; font-size: 34px; color: var(--primary); text-wrap: balance">Common patient concerns, answered</h2>
+<p style="margin: 0 0 32px; color: var(--muted); max-width: 640px">Travel for treatment is a major decision. We provide answers before you have to ask.</p>
+<div style="border-top: 1px solid var(--ink)">
+<div style="display: flex; flex-wrap: wrap; gap: 8px 40px; padding: 24px 0; border-bottom: 1px solid var(--line)"><div style="flex: 1 1 280px; min-width: 0; font-family: var(--fd); font-weight: 500; font-size: 20px">Are the doctors verified, and how can I check?</div><div style="flex: 2 1 420px; min-width: 0; color: var(--muted)">Each doctor has a profile listing their name, qualifications and hospital. Credentials are published only after verification.</div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 40px; padding: 24px 0; border-bottom: 1px solid var(--line)"><div style="flex: 1 1 280px; min-width: 0; font-family: var(--fd); font-weight: 500; font-size: 20px">What if my stay is extended or the plan changes?</div><div style="flex: 2 1 420px; min-width: 0; color: var(--muted)">Your quotation includes written terms explaining what is covered and what happens if your stay is extended or the plan changes after examination.</div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 40px; padding: 24px 0; border-bottom: 1px solid var(--line)"><div style="flex: 1 1 280px; min-width: 0; font-family: var(--fd); font-weight: 500; font-size: 20px">Who do I contact if I need help?</div><div style="flex: 2 1 420px; min-width: 0; color: var(--muted)">You have one named coordinator and a WhatsApp contact who supports you in Egypt and after you return.</div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 40px; padding: 24px 0; border-bottom: 1px solid var(--line)"><div style="flex: 1 1 280px; min-width: 0; font-family: var(--fd); font-weight: 500; font-size: 20px">Could commercial interests affect medical decisions?</div><div style="flex: 2 1 420px; min-width: 0; color: var(--muted)">No. Your treating doctor determines the medical plan. We disclose our commercial relationships with hospitals in each quotation.</div></div>
+</div>
+</section>
+
+<section id="specialties" style="padding: 72px 0 24px">
+<h2 style="margin: 0 0 8px; font-family: var(--fd); font-weight: 600; font-size: 34px; color: var(--primary); text-wrap: balance">Seven cardiac specialties</h2>
+<p style="margin: 0 0 32px; color: var(--muted); max-width: 640px">Choose the specialty closest to your needs. If you are unsure, the medical team can advise after reviewing your reports.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; border-top: 1px solid var(--ink)">
+<sc-for list="{{specialties}}" as="s" hint-placeholder-count="7">
+<a href="Request.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); text-decoration: none; min-width: 0">
+<span style="min-width: 0"><span dir="ltr" style="display: block; font-family: var(--fd); font-weight: 500; font-size: 19px; text-align: left">{{s.en}}</span><span style="display: block; font-size: 15px; color: var(--muted)">{{s.ar}}</span></span>
+<span style="font-size: 14px; font-weight: 600; color: var(--primary); white-space: nowrap">اطلب تقييمًا ←</span>
+</a>
+</sc-for>
+</div>
+<p style="margin: 20px 0 0; font-size: 14px; color: var(--muted)">لا نعرض سعرًا نهائيًا لأي إجراء قبل مراجعة حالتك.</p>
+</section>
+
+<section id="doctors" style="padding: 72px 0 24px">
+<h2 style="margin: 0 0 8px; font-family: var(--fd); font-weight: 600; font-size: 34px; color: var(--primary); text-wrap: balance">Doctors & Hospitals</h2>
+<p style="margin: 0 0 32px; color: var(--muted); max-width: 640px">أسماء حقيقية وبيانات موثقة. الأماكن التالية تُملأ ببيانات شركائك بعد التحقق منها.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 32px">
+<div style="flex: 1 1 280px; min-width: 0; display: flex; gap: 20px; align-items: flex-start"><div style="flex: 0 0 96px; height: 120px; border: 2px dashed var(--line); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--muted); text-align: center">Doctor<br>photo</div><div style="min-width: 0"><div style="font-family: var(--fd); font-weight: 500; font-size: 19px">[الاسم الكامل]</div><div style="font-size: 15px; color: var(--muted)">[Specialty] · [Hospital]</div><div style="font-size: 14px; color: var(--muted); padding-top: 8px">[Verified procedure count] · [Credentials]</div></div></div>
+<div style="flex: 1 1 280px; min-width: 0; display: flex; gap: 20px; align-items: flex-start"><div style="flex: 0 0 96px; height: 120px; border: 2px dashed var(--line); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--muted); text-align: center">Doctor<br>photo</div><div style="min-width: 0"><div style="font-family: var(--fd); font-weight: 500; font-size: 19px">[الاسم الكامل]</div><div style="font-size: 15px; color: var(--muted)">[Specialty] · [Hospital]</div><div style="font-size: 14px; color: var(--muted); padding-top: 8px">[Verified procedure count] · [Credentials]</div></div></div>
+<div style="flex: 1 1 280px; min-width: 0; display: flex; gap: 20px; align-items: flex-start"><div style="flex: 0 0 96px; height: 120px; border: 2px dashed var(--line); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--muted); text-align: center">Doctor<br>photo</div><div style="min-width: 0"><div style="font-family: var(--fd); font-weight: 500; font-size: 19px">[الاسم الكامل]</div><div style="font-size: 15px; color: var(--muted)">[Specialty] · [Hospital]</div><div style="font-size: 14px; color: var(--muted); padding-top: 8px">[Verified procedure count] · [Credentials]</div></div></div>
+</div>
+</section>
+
+<section id="included" style="padding: 80px 0 24px">
+<h2 style="margin: 0 0 8px; font-family: var(--fd); font-weight: 600; font-size: 34px; color: var(--primary); text-wrap: balance">What your journey includes—and excludes</h2>
+<p style="margin: 0 0 32px; color: var(--muted); max-width: 640px">Each quotation line clarifies whether payment goes to us or directly to the hospital.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 360px; min-width: 0; border-top: 3px solid var(--primary); padding-top: 16px">
+<div style="font-family: var(--fd); font-weight: 600; font-size: 20px; padding-bottom: 8px">Typically included</div>
+<div style="padding: 10px 0; border-bottom: 1px solid var(--line)">Medical services specified by the treating doctor</div>
+<div style="padding: 10px 0; border-bottom: 1px solid var(--line)">Hospital stay and post-discharge accommodation, as specified in the plan</div>
+<div style="padding: 10px 0; border-bottom: 1px solid var(--line)">Dedicated coordinator and interpreter when needed</div>
+<div style="padding: 10px 0; border-bottom: 1px solid var(--line)">Airport reception and transport to the hospital</div>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; border-top: 3px solid var(--accent); padding-top: 16px">
+<div style="font-family: var(--fd); font-weight: 600; font-size: 20px; padding-bottom: 8px">Clarified before you agree</div>
+<div style="padding: 10px 0; border-bottom: 1px solid var(--line)">Air tickets, depending on the selected package</div>
+<div style="padding: 10px 0; border-bottom: 1px solid var(--line)">Additional costs if the medical plan changes after examination</div>
+<div style="padding: 10px 0; border-bottom: 1px solid var(--line)">Extended stay when directed by the treating team</div>
+<div style="padding: 10px 0; border-bottom: 1px solid var(--line)">Personal expenses for the patient and companion</div>
+</div>
+</div>
+</section>
+
+<section id="costs" style="padding: 72px 0 24px">
+<h2 style="margin: 0 0 8px; font-family: var(--fd); font-weight: 600; font-size: 34px; color: var(--primary); text-wrap: balance">Cost ranges</h2>
+<p style="margin: 0 0 24px; color: var(--muted); max-width: 640px">Indicative figures with a source for each amount. Final pricing is determined after medical assessment.</p>
+<div style="overflow-x: auto; border-top: 1px solid var(--ink)">
+<table style="width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; font-size: 16px">
+<thead><tr style="color: var(--muted); font-size: 14px"><th style="padding: 14px 0; font-weight: 500">Procedure</th><th style="padding: 14px 0; font-weight: 500">In Egypt</th><th style="padding: 14px 0; font-weight: 500">In [your country]</th><th style="padding: 14px 0; font-weight: 500">Source</th></tr></thead>
+<tbody>
+<tr style="border-top: 1px solid var(--line)"><td style="padding: 16px 0">Interventional Cardiology</td><td style="padding: 16px 0">[من – إلى]</td><td style="padding: 16px 0">[من – إلى]</td><td style="padding: 16px 0; color: var(--muted)">[Source and date]</td></tr>
+<tr style="border-top: 1px solid var(--line)"><td style="padding: 16px 0">Valve Surgery</td><td style="padding: 16px 0">[من – إلى]</td><td style="padding: 16px 0">[من – إلى]</td><td style="padding: 16px 0; color: var(--muted)">[Source and date]</td></tr>
+<tr style="border-top: 1px solid var(--line); border-bottom: 1px solid var(--line)"><td style="padding: 16px 0">Electrophysiology &amp; Pacemakers</td><td style="padding: 16px 0">[من – إلى]</td><td style="padding: 16px 0">[من – إلى]</td><td style="padding: 16px 0; color: var(--muted)">[Source and date]</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="faq" style="padding: 72px 0 80px">
+<h2 style="margin: 0 0 24px; font-family: var(--fd); font-weight: 600; font-size: 34px; color: var(--primary); text-wrap: balance">FAQs</h2>
+<div style="border-top: 1px solid var(--ink)">
+<div style="padding: 20px 0; border-bottom: 1px solid var(--line)"><div style="font-weight: 600">Do I need to travel to receive an initial opinion?</div><div style="color: var(--muted)">No. You can submit reports through a secure portal and receive written feedback in your home country.</div></div>
+<div style="padding: 20px 0; border-bottom: 1px solid var(--line)"><div style="font-weight: 600">Who can see my medical file and passport?</div><div style="color: var(--muted)">Only authorized staff. Access is logged. We request a passport only when travel arrangements require it.</div></div>
+<div style="padding: 20px 0; border-bottom: 1px solid var(--line)"><div style="font-weight: 600">Can a family member accompany me?</div><div style="color: var(--muted)">Yes. Your companion can have an account with permissions you define, and cannot access your medical file without appropriate authorization.</div></div>
+</div>
+</section>
+</div>
+
+<section style="background: var(--primary); color: var(--onp); padding: 72px 24px">
+<div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 420px; min-width: 0">
+<div style="font-family: var(--fd); font-weight: 600; font-size: 28px; line-height: 1.4; text-wrap: balance">Disclosure of our hospital relationships</div>
+<p style="margin: 12px 0 0; opacity: 0.9">We work with the hospitals listed on this website and may have commercial relationships with them. Medical decisions are made independently by the treating doctor and are not influenced by commercial arrangements. Options in quotations are listed alphabetically or according to disclosed criteria.</p>
+</div>
+<a href="Request.dc.html" style="text-decoration: none; background: var(--accent); color: #FFFFFF; padding: 16px 32px; font-weight: 600; font-size: 18px; min-height: 52px; display: inline-flex; align-items: center">Request an Initial Medical Assessment</a>
+</div>
+</section>
+
+<footer style="max-width: 1240px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; gap: 12px 40px; justify-content: space-between; font-size: 14px; color: var(--muted)">
+<span>[Parent Company Name] · [رقم الترخيص]</span>
+<span>Privacy & Data Protection · Terms of Service · Cancellation & Refund Policy</span>
+<span>This website does not provide a diagnosis and is not a substitute for emergency care.</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"look":{"editor":"enum","options":["nile","editorial"],"default":"nile"},"$preview":{"width":1360,"height":3500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const L = {
+      nile: { bg: '#F3EDE2', surface: '#FBF8F1', ink: '#1A1F1D', muted: '#566058', primary: '#0F4C45', onp: '#F3EDE2', accent: '#B4532A', line: '#D6CCB8', soft: '#E7DFCF', fd: "'Readex Pro','IBM Plex Sans Arabic',sans-serif" },
+      editorial: { bg: '#FAF8F4', surface: '#FFFFFF', ink: '#14161A', muted: '#55585E', primary: '#14161A', onp: '#FAF8F4', accent: '#C23B2E', line: '#DAD5CA', soft: '#EFEBE2', fd: "'Noto Kufi Arabic','IBM Plex Sans Arabic',sans-serif" }
+    };
+    const look = (this.state && this.state.look) || this.props.look || 'nile';
+    const t = L[look];
+    const themeVars = '--bg:' + t.bg + ';--surface:' + t.surface + ';--ink:' + t.ink + ';--muted:' + t.muted + ';--primary:' + t.primary + ';--onp:' + t.onp + ';--accent:' + t.accent + ';--line:' + t.line + ';--soft:' + t.soft + ";--fd:" + t.fd + ";--fb:'IBM Plex Sans Arabic',Arial,sans-serif;";
+    const nileOn = look === 'nile';
+    return {
+      themeVars,
+      bgN: nileOn ? '#F3EDE2' : 'transparent', fgN: nileOn ? '#1A1F1D' : '#F3EDE2',
+      bgE: nileOn ? 'transparent' : '#FAF8F4', fgE: nileOn ? '#F3EDE2' : '#14161A',
+      setNile: () => this.setState({ look: 'nile' }),
+      setEd: () => this.setState({ look: 'editorial' }),
+      specialties: [
+        { en: 'Interventional Cardiology', ar: 'القسطرة القلبية والدعامات' },
+        { en: 'Coronary Artery Bypass Grafting', ar: 'جراحة مجازة الشرايين التاجية' },
+        { en: 'Valve Surgery', ar: 'إصلاح الصمامات أو استبدالها' },
+        { en: 'Minimally Invasive Cardiac Surgery', ar: 'جراحات القلب بأقل تدخل جراحي' },
+        { en: 'Pediatric & Congenital Heart Surgery', ar: 'قلب الأطفال والعيوب الخلقية' },
+        { en: 'Electrophysiology & Pacemakers', ar: 'اضطرابات نظم القلب وأجهزة التنظيم' },
+        { en: 'Aortic Surgery', ar: 'جراحات الشريان الأورطي' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

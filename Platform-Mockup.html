@@ -1,0 +1,2141 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cardiac Journey & Accommodation — Platform Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@500;700&family=Readex+Pro:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #F3EDE2;
+  --surface: #FBF8F1;
+  --paper: #FBF8F2;
+  --ink: #1A1F1D;
+  --muted: #566058;
+  --primary: #0F4C45;
+  --accent: #B4532A;
+  --line: #D6CCB8;
+  --soft: #E7DFCF;
+  --danger: #B42318;
+  --warn: #9A6700;
+  --good: #24704E;
+  --fd: 'Readex Pro', 'IBM Plex Sans Arabic', sans-serif;
+  --fb: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body.editorial {
+  --bg: #FAF8F4;
+  --surface: #FFFFFF;
+  --paper: #FFFFFF;
+  --ink: #14161A;
+  --muted: #55585E;
+  --primary: #14161A;
+  --accent: #C23B2E;
+  --line: #DAD5CA;
+  --soft: #EFEBE2;
+  --danger: #B42318;
+  --warn: #9A6700;
+  --good: #24704E;
+  --fd: 'Noto Kufi Arabic', 'IBM Plex Sans Arabic', sans-serif;
+  --fb: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html[dir="ltr"] {
+  --fd: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fb: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--fb);
+  font-size: 16px;
+  line-height: 1.7;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4, .brand, .hero-art .big, .section-title {
+  font-family: var(--fd);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+button, input, select, textarea {
+  font-family: var(--fb);
+  font-size: 15px;
+}
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+/* Top Notice & Global Controls */
+.top {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 10px 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+.switches {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.switches button, .themebtn {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  padding: 5px 12px;
+  font-size: 12px;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+.switches button.active {
+  background: var(--bg);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Shell & Layout */
+.shell {
+  max-width: 1320px;
+  margin: auto;
+  padding: 20px 4vw 60px;
+}
+
+/* Header */
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.brand small {
+  display: block;
+  font-family: var(--fb);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-top: 3px;
+}
+.head-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Navigation Bar */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  background: var(--bg);
+}
+.nav-links {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  padding: 10px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-btn {
+  white-space: nowrap;
+  border: 0;
+  background: transparent;
+  padding: 8px 14px;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 2px;
+  transition: color 0.15s, background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-btn:hover {
+  color: var(--ink);
+  background: var(--soft);
+}
+.nav-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+}
+body.editorial .nav-btn.active {
+  background: var(--primary);
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 7px 12px;
+  font-size: 14px;
+  border-radius: 2px;
+}
+
+/* Dropdown Menu for Specialties */
+.dropdown-wrap {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  inset-inline-start: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  min-width: 280px;
+  z-index: 100;
+  padding: 6px 0;
+}
+.dropdown-wrap:hover .dropdown-menu,
+.dropdown-menu.show {
+  display: block;
+}
+.dropdown-item {
+  display: block;
+  padding: 9px 16px;
+  font-size: 13.5px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.15s;
+}
+.dropdown-item:last-child { border-bottom: 0; }
+.dropdown-item:hover { background: var(--soft); }
+
+/* Buttons */
+.btn {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #FFFFFF;
+  padding: 11px 20px;
+  font-weight: 600;
+  font-size: 14.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 2px;
+  transition: background 0.2s, border-color 0.2s, transform 0.1s;
+  min-height: 44px;
+}
+.btn:hover {
+  background: color-mix(in srgb, var(--primary) 85%, #000);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn.secondary {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn.secondary:hover {
+  background: var(--soft);
+}
+.btn.quiet {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+.btn.quiet:hover {
+  background: var(--soft);
+}
+
+body.editorial .btn:not(.quiet):not(.secondary) {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+body.editorial .btn.secondary {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Content Area */
+.page {
+  padding: 28px 0 40px;
+}
+
+/* Typography elements */
+.eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.25;
+  margin: 0 0 10px;
+  color: var(--primary);
+}
+.section-intro {
+  color: var(--muted);
+  max-width: 780px;
+  margin: 0 0 28px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.rule {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: stretch;
+  padding: 16px 0 36px;
+}
+.hero h1 {
+  font-size: clamp(28px, 4vw, 50px);
+  line-height: 1.2;
+  margin: 12px 0 20px;
+  max-width: 760px;
+  color: var(--primary);
+}
+.hero p {
+  font-size: 17px;
+  max-width: 660px;
+  color: var(--ink);
+  margin: 0 0 28px;
+  line-height: 1.7;
+}
+.hero-art {
+  background: var(--primary);
+  color: #FFFFFF;
+  min-height: 320px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.hero-art:after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  right: -80px;
+  top: 50px;
+  box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.05), 0 0 0 85px rgba(255, 255, 255, 0.03);
+}
+html[dir="ltr"] .hero-art:after {
+  right: auto;
+  left: -80px;
+}
+.hero-art > * {
+  position: relative;
+  z-index: 1;
+}
+.hero-art .big {
+  font-size: 28px;
+  line-height: 1.35;
+  max-width: 380px;
+  font-weight: 600;
+}
+body.editorial .hero-art {
+  background: var(--primary);
+}
+
+/* Grids and Columns */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.lineitem {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.lineitem strong {
+  display: block;
+  font-size: 16.5px;
+  font-family: var(--fd);
+  margin-bottom: 4px;
+}
+.lineitem span {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Panels and Cards */
+.panel {
+  border: 1px solid var(--line);
+  padding: 24px;
+  background: var(--paper);
+  border-radius: 2px;
+}
+.panel h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  color: var(--primary);
+}
+
+/* Card Links */
+.card-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  padding: 22px;
+  background: var(--paper);
+  text-decoration: none;
+  color: inherit;
+  border-radius: 2px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.card-link:hover {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+/* Forms */
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.field label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.field input, .field select, .field textarea {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 12px 14px;
+  width: 100%;
+  color: var(--ink);
+  border-radius: 2px;
+  font-size: 15.5px;
+  transition: border-color 0.2s, outline 0.2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -1px;
+}
+.field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Tags and Badges */
+.tag {
+  display: inline-block;
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 2px;
+}
+.tag.good {
+  color: var(--good);
+  border-color: color-mix(in srgb, var(--good) 40%, var(--line));
+  background: color-mix(in srgb, var(--good) 8%, transparent);
+}
+.tag.warn {
+  color: var(--warn);
+  border-color: color-mix(in srgb, var(--warn) 40%, var(--line));
+  background: color-mix(in srgb, var(--warn) 8%, transparent);
+}
+.tag.danger {
+  color: var(--danger);
+  border-color: color-mix(in srgb, var(--danger) 40%, var(--line));
+  background: color-mix(in srgb, var(--danger) 8%, transparent);
+}
+
+/* Statistics row */
+.statrow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+.stat {
+  border-top: 2px solid var(--primary);
+  padding: 12px 0;
+}
+.stat b {
+  font-size: 24px;
+  display: block;
+  font-family: var(--fd);
+  margin-top: 4px;
+  color: var(--primary);
+}
+.stat span {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Tables */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0;
+  border: 1px solid var(--line);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  background: var(--paper);
+}
+th, td {
+  text-align: start;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--soft);
+}
+tr:last-child td { border-bottom: 0; }
+
+/* Timeline */
+.timeline {
+  border-inline-start: 2px solid var(--line);
+  margin: 20px 8px;
+  padding-inline-start: 24px;
+}
+.event {
+  position: relative;
+  padding: 0 0 24px;
+}
+.event:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  inset-inline-start: -30px;
+  top: 7px;
+}
+.event.pending:before {
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.event h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+.event p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* Step Sequence Card */
+.step-box {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.step-num {
+  font-family: var(--fd);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 32px;
+}
+.step-content strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.step-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Accordion / FAQs */
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 0;
+  color: var(--primary);
+}
+.faq-body {
+  padding: 10px 0 6px;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.65;
+  display: none;
+}
+.faq-item.open .faq-body {
+  display: block;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Operations Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+}
+.side {
+  border-inline-end: 1px solid var(--line);
+  padding-inline-end: 18px;
+}
+.side button {
+  display: block;
+  width: 100%;
+  text-align: start;
+  border: 0;
+  background: transparent;
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 14px;
+  border-radius: 2px;
+  margin-bottom: 4px;
+  transition: all 0.15s;
+}
+.side button:hover {
+  color: var(--ink);
+  background: var(--soft);
+}
+.side button.active {
+  background: var(--soft);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Alerts and Notices */
+.alert {
+  border-inline-start: 3px solid var(--accent);
+  padding: 14px 18px;
+  background: var(--soft);
+  font-size: 14px;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+.notice {
+  padding: 12px 16px;
+  border: 1px dashed var(--line);
+  margin: 16px 0;
+  font-size: 13.5px;
+  color: var(--muted);
+  background: var(--paper);
+}
+.metric-note {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 400;
+  display: block;
+  margin-top: 2px;
+}
+.progress {
+  height: 6px;
+  background: var(--soft);
+  margin: 12px 0 18px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.workspace-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.workspace-actions button {
+  padding: 9px 15px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-size: 13.5px;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.workspace-actions button:hover {
+  background: var(--soft);
+}
+.workspace-actions button.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.mini-field {
+  display: grid;
+  gap: 5px;
+}
+.mini-field label {
+  font-size: 12.5px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.mini-field input, .mini-field select, .mini-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 2px;
+}
+
+/* Footer */
+.footer {
+  padding: 36px 0 24px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--muted);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+.footer-col h5 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-family: var(--fd);
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.footer-col a {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13.5px;
+}
+.footer-col a:hover {
+  color: var(--ink);
+}
+.footer-bottom {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.hidden { display: none !important; }
+.muted { color: var(--muted); }
+.small { font-size: 12.5px; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .columns, .layout {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .side {
+    border-inline-end: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 12px;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .side button {
+    white-space: nowrap;
+    width: auto;
+    margin-bottom: 0;
+    margin-inline-end: 6px;
+  }
+  .statrow {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .hero-art {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 0;
+  }
+  .nav-links.mobile-open {
+    display: flex;
+  }
+  .main-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: 0;
+    padding-inline-start: 16px;
+    background: transparent;
+  }
+  .dropdown-wrap:hover .dropdown-menu {
+    display: none;
+  }
+  .dropdown-menu.show {
+    display: block;
+  }
+}
+
+@media (max-width: 680px) {
+  .grid, .grid-2, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .mini-grid {
+    grid-template-columns: 1fr;
+  }
+  .head {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px 0 16px;
+  }
+  .head-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 4vw;
+  }
+  .switches {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .statrow {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .btn {
+    width: 100%;
+  }
+  .head-actions .btn {
+    width: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .statrow {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <span id="topLabel">معاينة تفاعلية — بيانات توضيحية فقط</span>
+  <div class="switches">
+    <button id="langBtn" onclick="toggleLang()">English</button>
+    <button id="nileBtn" class="active" onclick="setTheme('nile')">أخضر النيل</button>
+    <button id="editorialBtn" onclick="setTheme('editorial')">تحريري طبي</button>
+  </div>
+</div>
+
+<div class="shell">
+  <header class="head">
+    <div class="brand" onclick="showPage('home')">
+      <span id="brandName">اسم الشركة</span>
+      <small id="brandSub">رعاية القلب · مصر</small>
+    </div>
+    <div class="head-actions">
+      <span class="tag" id="modeTag">نسخة تجريبية</span>
+      <button class="btn secondary" onclick="showPage('assessment')" id="headerCta">اطلب تقييمًا طبيًا أوليًا</button>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <button class="mobile-toggle" onclick="toggleMobileNav()" id="mobileMenuBtn">القائمة الرئيسية ☰</button>
+    <div class="nav-links" id="navLinksContainer">
+      <!-- Injected by renderNav() -->
+    </div>
+  </nav>
+
+  <main id="content" class="page"></main>
+
+  <footer class="footer" id="mainFooter">
+    <!-- Injected by renderFooter() -->
+  </footer>
+</div>
+
+<script>
+
+const dataStore = {
+  ar: {"langCode":"ar","dir":"rtl","brandName":"رعاية القلب · مصر","brandSub":"CARDIAC CARE & ACCOMMODATION","topLabel":"معاينة تفاعلية — بيانات توضيحية فقط","modeTag":"نسخة تجريبية","headerCta":"اطلب تقييمًا طبيًا أوليًا","footerNote":"موكاب للتصميم واختبار سير العمل؛ لا يرسل بيانات ولا يمثل نظامًا طبيًا حقيقيًا.","emergency":"حالة طارئة؟ إذا كنت تشعر بألم حاد في الصدر أو ضيق شديد في التنفس، اتصل بالإسعاف في بلدك فورًا ولا تنتظر هذا الموقع.","nav":{"home":"الرئيسية","specialties":"تخصصات القلب","hospitals":"المستشفيات والأطباء","technology":"التقنيات الطبية","journey":"مسار الرحلة","accommodation":"السفر والإقامة","assessment":"طلب تقييم","portal":"بوابة المريض","ops":"النظام التشغيلي","finance":"المالية","about":"عن المنصة","contact":"تواصل معنا","faqs":"الأسئلة الشائعة","privacy":"الخصوصية","terms":"الشروط"},"home":{"eyebrow":"رأي طبي مبدئي · دون التزام بالسفر","heroTitle":"أرسل تقاريرك الطبية، واعرف خياراتك قبل أن تقرر السفر إلى مصر","heroDesc":"يراجع ملفك فريق قلب متخصص في مصر، وتصلك توصية مكتوبة وخيارات علاجية واضحة ومستقلة. لا رسوم على هذه الخطوة. إذا قررت المتابعة، ينسق فريقنا الرعاية الطبية والإقامة الفندقية المجهزة والنقل حتى عودتك لبلدك بسلامة.","ctaPrimary":"اطلب تقييمًا طبيًا أوليًا","ctaSecondary":"استكشف التخصصات والخيارات","heroArtBadge":"رعاية القلب · مصر","heroArtTitle":"رحلة منسقة تبدأ بمراجعة طبية دقيقة ومستقلة.","heroArtSub":"تنسيق متكامل للرعاية السريرية، والإقامة الفندقية للتعافي، واستقبال المطار، والمتابعة بعد العودة.","heroArtNote":"01 / 05 — تدقيق طبي قبل أي التزام مالي","coordinationEyebrow":"دورنا في رحلتك","coordinationTitle":"تنسيق متكامل يضع راحتك وسلامتك أولاً","coordinationDesc":"نحن جهة تنسيق متخصصة في السياحة العلاجية وجراحات القلب في مصر. لا نصدر أحكامًا طبية بديلة، بل نصلك بأفضل الاستشاريين والمستشفيات المعتمدة ونوفر الدعم اللوجستي الكامل.","coordinationPillars":[{"num":"01","title":"مراجعة الملفات وتدقيقها","text":"فحص اكتمال التقارير والأشعة وإحالتها للجنة الجراحية المختصة دون أي رسوم تقييم مبدئي."},{"num":"02","title":"خيارات معتمدة وشفافة","text":"تقديم عروض واضحة تحدد ما يُدفع للمستشفى مباشرة وما يخص خدمات الإقامة والتنسيق دون وسيط خفي."},{"num":"03","title":"ضيافة وإقامة فندقية طبية","text":"حجز أجنحة فندقية مجهزة للتعافي وقريبة من المستشفى الشريك مع مرافقين وتمريض عند الطلب."},{"num":"04","title":"مرافقة شخصية ومتابعة مستمرة","text":"منسق مخصص يستقبلك من المطار ويبقى معك طوال مكوثك في مصر وحتى استقرار حالتك بعد العودة."}],"specialtiesEyebrow":"التخصصات الجراحية","specialtiesTitle":"سبعة تخصصات دقيقة في جراحة وقسطرة القلب","specialtiesIntro":"اختر التخصص الأقرب لحالتك للاطلاع على التفاصيل الطبية والمستندات المطلوبة وخطة التنسيق.","hospitalsEyebrow":"المستشفيات والكوادر الطبية","hospitalsTitle":"مستشفيات معتمدة وجراحون مؤهلون","hospitalsIntro":"نتعامل حصرياً مع مستشفيات حاصلة على اعتمادات دولية ومحلية (JCI و GAHAR)، وجراحين حاصلين على الزمالات البريطانية والأمريكية.","techEyebrow":"المعايير والتجهيزات","techTitle":"تقنيات طبية متقدمة ومصنعون عالميون","techIntro":"تعتمد مراكز القلب الشريكة على أحدث غرف العمليات الهجينة (Hybrid OR) وأجهزة القسطرة وصمامات القلب من أبرز الشركات العالمية.","journeyEyebrow":"كيف تعمل الرحلة","journeyTitle":"مسار واضح من 8 مراحل من رسالتك الأولى حتى عودتك","journeyIntro":"كل مرحلة محددة بمسؤوليات واضحة ومراجعات طبية رسمية لضمان أعلى درجات الأمان والشفافية.","stayEyebrow":"الخدمات اللوجستية","stayTitle":"أين ستقيم أنت ومرافقك أثناء رحلة العلاج؟","stayIntro":"نوفر أجنحة فندقية وشققاً مجهزة بالقرب من المستشفيات في 6 أكتوبر والمعادي والقاهرة الجديدة.","faqEyebrow":"إجابات مسبقة","faqTitle":"ما يقلق المرضى عادة، وكيف نجيب عنه","faqIntro":"السفر للعلاج قرار كبير يتطلب الثقة والوضوح الكامل قبل البدء.","finalCtaTitle":"جاهز لمعرفة خياراتك الطبية؟","finalCtaDesc":"أرسل بياناتك الأساسية وسيتواصل معك منسق الحالة لشرح الخطوات وتحديد التقارير المطلوبة دون أي التزام مالي.","finalCtaBtn":"اطلب تقييمًا طبيًا أوليًا الآن"},"specialtiesList":[{"id":"interventional","name":"القسطرة التداخلية ودعامات الشرايين","enName":"Interventional Cardiology","desc":"قسطرة الشرايين التاجية، وتوسيع الانسدادات، وزراعة الدعامات الدوائية الحديثة مع مكوث قصير وسرعة تعافي.","overview":"تعد القسطرة القلبية التداخلية الخيار الأول لتشخيص وعلاج ضيق وانسداد الشرايين التاجية المغذية لعضلة القلب دون الحاجة لجراحة مفتوحة. تُجرى عبر الشريان الكعبري في اليد أو الفخذ بأحدث التقنيات وأقل تدخل ممكن.","indications":["الذبحة الصدرية المستقرة وغير المستقرة","جلطات القلب الحادة (Primary PCI)","ضيق الشرايين التاجية المتعددة","إعادة تقييم الدعامات السابقة"],"documentsRequired":["تقرير قسطرة تشخيصية سابقة (إن وجد) مع قرص CD للأشعة","تقرير إيكو حديث على القلب (Echocardiogram)","رسم قلب حديث (ECG) وتحاليل وظائف الكلى والسكر"],"journeySummary":"مكوث ليلة واحدة فقط بالمستشفى في أغلب الحالات، يليها يومان في جناح التعافي الفندقي قبل السفر.","faqs":[{"q":"كم تستغرق عملية القسطرة والتعافي؟","a":"تستغرق القسطرة عادة من 45 إلى 90 دقيقة، ويمكن للمريض المشي في نفس اليوم أو اليوم التالي، والعودة لبلده خلال 4 إلى 5 أيام."},{"q":"هل الدعامات المستخدمة من الجيل الحديث؟","a":"نعم، تستخدم المستشفيات الشريكة دعامات دوائية حديثة (Drug-Eluting Stents) معتمدة عالمياً تقلل احتمالية عودة الضيق إلى أقل من 3%."}]},{"id":"cabg","name":"جراحة تحويل مسار الشرايين التاجية (CABG)","enName":"Coronary Artery Bypass Grafting","desc":"جراحة مجازة الشرايين لعلاج الانسدادات المتقدمة والمعقدة بإشراف جراحي قلب دوليين.","overview":"جراحة القلب المفتوح لتغيير مسار الشرايين التاجية المسدودة باستخدام شرايين أو أوردة من الجسم لضمان تدفق الدم الكافي لعضلة القلب، وتُجرى باستخدام تقنيات القلب النابض (Off-Pump) أو عبر ماكينة القلب والرئة الصناعية.","indications":["انسداد الشريان التاجي الأيسر الرئيسي","ضيق الشرايين التاجية الثلاثية مع ضعف عضلة القلب","فشل التوسيع بالقسطرة لدى مرضى السكري"],"documentsRequired":["قرص قسطرة شرايين القلب (Coronary Angiography CD)","أشعة مقطعية متعددة المقاطع للشرايين (إن وجدت)","تقرير إيكو يوضح كفاءة البطين الأيسر (Ejection Fraction)","تقرير طبي مفصل بالحالة الصحية العامة والأمراض المزمنة"],"journeySummary":"إقامة 5 إلى 7 أيام بالمستشفى (تشمل الرعاية المركزة)، تليها فترة نقاهة من 7 إلى 10 أيام في جناح فندقي مجهز قبل إذن السفر.","faqs":[{"q":"متى يمكن للمريض ركوب الطائرة بعد العملية؟","a":"يحدد الفريق الجراحي موعد السفر بعد التأكد من التئام عظم القص واستقرار ضربات القلب، ويكون ذلك عادة بعد 10 إلى 14 يوماً من الجراحة."},{"q":"هل يحتاج المريض مرافقة تمريضية في الفندق؟","a":"نعم، نرتب زيارات تمريضية دورية لمتابعة المؤشرات الحيوية وتغيير الضمادات ومساعدة المريض في التمارين التنفسية."}]},{"id":"valves","name":"جراحة واستبدال صمامات القلب (TAVI / SAVR)","enName":"Heart Valve Surgery","desc":"إصلاح واستبدال الصمام الأورطي والميترالي بالجراحة أو بالقسطرة (TAVI) لكبار السن والحالات عالية الخطورة.","overview":"علاج ضيق أو ارتجاع صمامات القلب سواء عبر تقنيات القسطرة المتطورة (TAVI) بدون جراحة مفتوحة، أو عبر التدخل الجراحي الدقيق لإصلاح الصمام أو استبداله بصمام حيوي أو ميكانيكي.","indications":["ضيق الصمام الأورطي الشديد لدى كبار السن","ارتجاع الصمام الميترالي الشديد","التهاب وتكلس صمامات القلب المزمن"],"documentsRequired":["أشعة مقطعية كاملة للقلب والشرايين (TAVI Protocol CT Angiogram)","أشعة إيكو عبر المريء (TEE) أو إيكو ثلاثي الأبعاد","تقارير تحاليل الدم الشاملة ووظائف الكبد والكلى"],"journeySummary":"في إجراء TAVI: مكوث 48 ساعة بالمستشفى وتعافٍ سريع، بينما في الجراحة التقليدية تكون الإقامة 5-7 أيام بالمستشفى تليها نقاهة مريحة.","faqs":[{"q":"ما الفرق بين TAVI والجراحة التقليدية للصمام؟","a":"إجراء TAVI يتم عبر قسطرة دقيقة من شريان الفخذ دون فتح الصدر، وهو مثالي لمن يخشون مضاعفات الجراحة المفتوحة أو كبار السن."},{"q":"كم سنة يدوم الصمام الحيوي؟","a":"تدوم الصمامات الحيوية الحديثة من 15 إلى 20 عاماً دون الحاجة لتناول مسيلات الدم القوية مدى الحياة مثل الصمامات الميكانيكية."}]},{"id":"mics","name":"جراحة القلب طفيفة التوغل (MICS)","enName":"Minimally Invasive Cardiac Surgery","desc":"إجراء عمليات الصمامات ومجازة الشرايين عبر شق جانبي صغير بين الضلوع لتفادي شق عظم القص.","overview":"تقنية جراحية حديثة تجرى عبر فتحة صغيرة لا تتجاوز 5-6 سم بين الضلوع، مما يحافظ على القفص الصدري سليمًا، ويقلل الألم بشكل هائل، ويسمح بالعودة للأنشطة الطبيعية والسفر في وقت أسرع.","indications":["إصلاح أو استبدال الصمام الميترالي والصمام ثلاثي الشرف","تغيير مسار الشريان التاجي الأمامي المنحدر (LIMA to LAD)","استئصال أورام القلب الحميدة (Myxoma) وإغلاق ثقب الحاجز (ASD)"],"documentsRequired":["تقرير إيكو حديث عالي الدقة","أشعة مقطعية على الصدر لمعاينة المسافات بين الضلوع","قسطرة شرايين القلب إن تجاوز عمر المريض 40 عامًا"],"journeySummary":"مكوث 3-4 أيام بالمستشفى ونقاهة 5 أيام بالجناح الفندقي، مع ألم أقل بكثير وتندب جراحي غير ملحوظ.","faqs":[{"q":"هل تصلح تقنية التدخل الطفيف لجميع المرضى؟","a":"تعتمد الملاءمة على تشريح الصدر، وموقع الصمام، والوزن؛ ويحدد الجراح مدى إمكانية إجرائها بعد دراسة الأشعة المقطعية."}]},{"id":"pediatric","name":"جراحة قلب الأطفال والعيوب الخلقية","enName":"Pediatric & Congenital Heart Surgery","desc":"رعاية فائقة التخصص للمواليد والأطفال الذين يعانون من عيوب القلب الخلقية المعقدة.","overview":"إصلاح العيوب الخلقية في بنية القلب والشرايين للأطفال والرضع، في مراكز مجهزة بوحدات رعاية مركزة للأطفال (PICU) وفريق متكامل من أطباء قلب الأطفال وجراحي الرضع.","indications":["رباعي فالوت (Tetralogy of Fallot)","انعكاس وضع الشرايين الكبرى (TGA)","ثقب بين البطينين أو الأذينين (VSD / ASD)","ضيق الشريان الأورطي للرضع (Coarctation of Aorta)"],"documentsRequired":["تقرير إيكو أطفال ملون (Pediatric Echo Report)","أشعة مقطعية أو رنين مغناطيسي على القلب (إن وجد)","تقرير أخصائي الأطفال المتابع وتاريخ الوزن والنمو"],"journeySummary":"إقامة الطفل مع أحد الوالدين بالمستشفى، يتبعها جناح عائلي واسع ومريح بمصر الجديدة أو أكتوبر للمتابعة بعد الخروج.","faqs":[{"q":"هل يسمح للأم أو الأب بالبقاء مع الطفل في الرعاية؟","a":"تسمح المستشفيات الشريكة بزيارات ومرافقة مقننة للوالدين في الرعاية، ويكون الوالدان مع الطفل طوال فترة الإقامة بالجناح."}]},{"id":"ep","name":"كهرباء القلب ومنظمات ضربات القلب","enName":"Electrophysiology & Pacemakers","desc":"تشخيص اضطرابات النظم، والكي بالقسطرة ثلاثية الأبعاد، وزراعة أجهزة تنظيم ومراقبة النبض الحديثة.","overview":"علاج تسارع أو بطء ضربات القلب، ونوبات الإغماء غير المفسرة، باستخدام أحدث أجهزة الخرائط ثلاثية الأبعاد (3D Mapping) وزراعة أجهزة تنظيم ضربات القلب (Pacemakers) وأجهزة الصدمات القابلة للزرع (ICD / CRT).","indications":["الرجفان الأذيني (Atrial Fibrillation)","تسارع نبض القلب فوق البطيني (SVT)","بطء القلب الحاد والإحصار القلبي","قصور القلب المتقدم المحتاج لمنظم CRT"],"documentsRequired":["رسم قلب كهربائي 12 قناة (12-Lead ECG)","تسجيل هولتر 24 أو 48 ساعة لضربات القلب (Holter Monitor)","تقرير إيكو للقلب وتاريخ نوبات الإغماء أو الخفقان"],"journeySummary":"إجراء طفيف التوغل يستدعي مكوث 24-48 ساعة، يليه يومان لبرمجة الجهاز وفحصه قبل العودة.","faqs":[{"q":"هل يمكن السفر بالطائرة بعد زراعة منظم ضربات القلب؟","a":"نعم، يحصل المريض على بطاقة تعريف طبية للجهاز لتمريرها في بوابات المطار، ويكون السفر آمناً تماماً بعد يومين إلى ثلاثة أيام."}]},{"id":"aortic","name":"جراحة الشريان الأورطي وتمدد الأوعية","enName":"Aortic Surgery","desc":"إصلاح تمدد وسلخ الشريان الأورطي بالدعامات المغطاة (TEVAR/EVAR) أو الجراحة الهجينة المتقدمة.","overview":"جراحة دقيقة للشريان الأكبر في الجسم لعلاج التمدد (Aneurysm) أو السلخ (Dissection) لحماية الشريان من الانفجار، وتتم إما بالدعامات القسطارية المغطاة أو الاستبدال الجراحي بأنبوب صناعي متطور.","indications":["تمدد الشريان الأورطي الصدري أو البطني بمقاس يتجاوز 5 سم","سلخ الشريان الأورطي المزمن أو الحاد المستقر","متلازمة مارفان وضعف أنسجة الأورطي"],"documentsRequired":["أشعة مقطعية بالصبغة على كامل الشريان الأورطي الصدري والبطني (CT Aortogram)","تقرير إيكو لفحص صمام الأورطي وجذر الشريان","فحوصات وظائف الكلى وتحاليل التجلط"],"journeySummary":"إقامة متقدمة 5-7 أيام ومتابعة دقيقة لضغط الدم قبل إتاحة إذن الطيران.","faqs":[{"q":"ما هي تقنية الدعامات المغطاة للأورطي (TEVAR)؟","a":"تقنية يتم فيها إدخال دعامة نسيجية مغطاة عبر شريان الفخذ لتغطية منطقة التمدد دون الحاجة لفتح الصدر أو البطن."}]}],"hospitalsSection":{"eyebrow":"المستشفيات والشركاء","title":"مستشفيات قلب تخصصية معتمدة دولياً","desc":"نربط حالتك بأفضل مراكز القلب في مصر الحائزة على اعتمادات دولية مشهود لها، مع الشفافية الكاملة بشأن كل مركز.","disclaimer":"ملاحظة موثوقية: جميع المستشفيات والأطباء المذكورين يتم تدقيق أوراق اعتمادهم واعتماد تراخيصهم سارية المفعول قبل إصدار أي عرض سعر رسمي. لا نختلق إحصائيات أو شراكات غير مؤكدة.","hospitals":[{"name":"مستشفى دار الفؤاد — 6 أكتوبر","type":"مستشفى قلب متخصص ورائد إقليمي","accreditation":"معتمد من اللجنة الدولية المشتركة (JCI) لخمس دورات متتالية","highlights":"وحدات قسطرة هجينة على مدار الساعة، مركز متميز لجراحات القلب المفتوح وزراعة الصمامات، وغرف رعاية مركزة فائقة التجهيز.","location":"مدينة 6 أكتوبر — الجيزة (5 دقائق من أجنحة النيل الفندقية)","specialties":["القسطرة التداخلية ودعامات الشرايين","جراحة مجازة الشرايين CABG","تغيير الصمام بالقسطرة TAVI","جراحة قلب الأطفال"]},{"name":"مستشفى السلام الدولي — المعادي","type":"مجمع طبي دولي متعدد التخصصات","accreditation":"معتمد من JCI والاعتماد الكندي للجودة الصحية","highlights":"إطلالة مباشرة على كورنيش النيل، قسم متميز لفسيولوجيا وكهرباء القلب وزراعة منظمات النبض، وخدمات استقبال وإقامة خاصة بالمرضى الدوليين.","location":"كورنيش النيل — المعادي (7 دقائق من شقق المعادي الفاخرة)","specialties":["كهرباء القلب ومنظمات CRT/ICD","جراحة الصمامات طفيفة التوغل","قسطرة الشرايين الطرفية والأورطي","فحوصات القلب المتقدمة"]},{"name":"المركز التخصصي لجراحات القلب — القاهرة الجديدة","type":"مركز رعاية قلبية جراحية متقدم","accreditation":"معتمد من الهيئة العامة للاعتماد والرقابة الصحية (GAHAR)","highlights":"أحدث غرف عمليات القلب المغلقة، بيئة هادئة بعيدة عن الزحام، أجنحة فندقية ملحقة للمرضى الدوليين والمرافقين.","location":"التجمع الخامس — القاهرة الجديدة (10 دقائق من أجنحة رويال ريزيدنس)","specialties":["جراحة القلب طفيفة التوغل MICS","إصلاح عيوب القلب الخلقية","جراحة تمدد الشريان الأورطي TEVAR"]}],"doctorsStandardTitle":"معايير اختيار الجراحين والاستشاريين","doctorsStandards":["درجة الدكتوراه والزمالة المهنية البريطانية (FRCS) أو البورد الأمريكي أو ما يعادلها دولياً.","سجل موثق بعدد العمليات السنوية ونسب الأمان ومطابقة الممارسات مع الجمعية الأوروبية والكلية الأمريكية لأمراض القلب.","التزام خطي بالإفصاح الكامل عن خيارات العلاج وتفاصيل الرأي السريري دون انحياز تجاري.","إمكانية إجراء استشارة مرئية موثقة للمريض قبل اتخاذ قرار السفر."]},"technologySection":{"eyebrow":"الأجهزة والتقنيات","title":"المصنعون والتقنيات الطبية المعتمدة","desc":"نضمن للمريض أن المواد الطبية المستخدمة في عمليته — كالدعامات والصمامات ومنظمات القلب — تأتي من مصنعين عالميين معتمدين وخاضعين لأعلى معايير الرقابة الدوائية.","notice":"تنبيه الشفافية: أسماء المصنعين والتقنيات معروضة كمرجع إيضاحي للمعايير الهندسية والطبية المعمول بها في مراكز القلب الشريكة، ولا تمثل إعلاناً تجارياً أو شراكة حصرية. يتم إدراج مواصفات الجهاز بدقة في عرض السعر المكتوب للمريض.","categories":[{"title":"صمامات القلب والقسطرة التداخلية","manufacturers":"Edwards Lifesciences · Medtronic · Abbott Vascular","details":"صمامات بيولوجية متقدمة تُركب بالقسطرة (TAVI) مصنوعة من أنسجة نقية مجففة بتقنيات حديثة تمنع التكلس، مع دعامات دوائية تطلق دواء الإيفيروليموس لمنع عودة ضيق الشرايين."},{"title":"منظمات ضربات القلب وأجهزة الصدمات","manufacturers":"Medtronic · Boston Scientific · Biotronik","details":"منظمات CRT و ICD الحديثة القابلة للفحص بالرنين المغناطيسي (MRI-Conditional) والمزودة بأنظمة متابعة لاسلكية تمكن الطبيب من مراقبة النبض عن بعد بعد سفر المريض."},{"title":"أجهزة تصوير القسطرة والخرائط ثلاثية الأبعاد","manufacturers":"Siemens Healthineers · Philips Healthcare · Biosense Webster","details":"معامل قسطرة ثنائية المستوى ذات جرعات إشعاعية منخفضة، مع أنظمة خريطة القلب الكهربية (CARTO 3) لتحديد مسارات النبض الشاذة وكيّها بدقة الملليمتر."},{"title":"دعم الدورة الدموية والرعاية الجراحية المركزة","manufacturers":"Getinge / Maquet · Abbott (CentriMag) · Terumo","details":"أجهزة دعم الدورة الدموية الميكانيكية المؤقتة (ECMO) ومضخات البالون الأورطي لضمان أعلى مستويات الأمان أثناء وبعد الجراحات المعقدة."}]},"journeySection":{"eyebrow":"خارطة الطريق","title":"مسار رحلتك العلاجية من البداية حتى العودة بسلامة","desc":"خطوات محددة بدقة تضمن التدقيق الطبي المستقل والراحة اللوجستية في كل محطة من سفرك.","steps":[{"step":"01","title":"الاستفسار والطلب الأولي","desc":"تتواصل معنا وتشارك بياناتك الأساسية، ويتواصل معك منسق الحالة لشرح كيفية تنظيم الملف دون أي التزام مالي."},{"step":"02","title":"جمع الملف والتقارير الطبية","desc":"مساعدتك في جمع تقارير الإيكو والقسطرة والتحاليل عبر قناة آمنة ومطابقتها للمتطلبات اللازمة للمراجعة."},{"step":"03","title":"المراجعة الطبية المبدئية","desc":"فحص اكتمال المستندات وتلخيص الحالة السريرية وإحالتها للجنة القلب المختصة في مصر."},{"step":"04","title":"مراجعة المستشفى والجراح المعالج","desc":"استلام الرأي السريري المكتوب من الجراح المشرف وتحديد الخطة المقترحة (قسطرة، جراحة، أو متابعة دوائية)."},{"step":"05","title":"عرض الخطة وعرض السعر المفصل","desc":"إرسال عرض مكتوب يوضح تكلفة المستشفى وتكلفة الإقامة الفندقية وما يشمله السعر وما لا يشمله بكل وضوح."},{"step":"06","title":"تنسيق السفر والإقامة الفندقية","desc":"استخراج التأشيرة الطبية الإلكترونية، وحجز الجناح الفندقي المناسب لك ولمرافقك، وتأكيد موعد الدخول."},{"step":"07","title":"الاستقبال ودخول المستشفى وإجراء العملية","desc":"استقبال خاص بالمطار، وتوصيلك للمقر، وإجراء الفحوصات والعملية بنجاح بإشراف فريق التنسيق الميداني."},{"step":"08","title":"النقاهة بالجناح الفندقي والمتابعة بعد العودة","desc":"قضاء فترة النقاهة المقررة، والحصول على تقرير الخروج المعتمد، وجدولة الاستشارات عن بعد بعد عودتك لوطنك."}]},"accommodationSection":{"eyebrow":"الضيافة والسكن اللوجستي","title":"خدمات السفر والإقامة والرعاية المتكاملة","desc":"نعتني بكافة التفاصيل المحيطة بعلاجك لتتفرغ تماماً لصحتك وتعافيك برفقة عائلتك.","services":[{"title":"أجنحة فندقية مجهزة للتعافي","desc":"أجنحة وشقق فندقية مفروشة ومصممة لراحة المريض ومرافقه، على مقربة من المستشفيات، مزودة بمصاعد واسعة وتجهيزات تناسب الحركة بعد الجراحة."},{"title":"استقبال ونقل طبي من المطار","desc":"سيارة خاصة مجهزة تنتظرك بالمطار عند وصولك وتتولى تنقلاتك بين الفندق والمستشفى، مع توفير سيارة إسعاف مجهزة للحالات التي تستدعي ذلك."},{"title":"ترتيبات المرافقين والعائلة","desc":"توفير غرف نوم مستقلة للمرافقين، وتنسيق الإقامة العائلية الواسعة، مع تسهيل كافة متطلبات المعيشة والوجبات الصحية المخصصة لمرضى القلب."},{"title":"منسق شخصي ومساعد على مدار الساعة","desc":"منسق مخصص يرافقك في المواعيد الطبية، ويجيب عن استفساراتك، ويتابع كافة الإجراءات الإدارية داخل المستشفى نيابة عنك."},{"title":"خدمة المتابعة والاستشارات عن بعد","desc":"جدولة مواعيد فيديو مع الطبيب المعالج بعد عودتك لوطنك، ومشاركة تقارير التحاليل الدورية للاطمئنان على استقرار الحالة."}],"stayItems":[{"title":"أجنحة النيل الطبية الفندقية — 6 أكتوبر","distance":"5 دقائق عن مستشفى دار الفؤاد","details":"أجنحة فندقية مفروشة ومجهزة لراحة المريض ومرافقه، مع سرير طبي ومصعد للكراسي المتحركة.","amenities":"سرير طبي قابل للتعديل · غرفة نوم منفصلة للمرافق · تمريض تحت الطلب · تنقل يومي للمستشفى","price":"1,850 ج.م / ليلة (تقديري)"},{"title":"شقق المعادي النيلية — كورنيش النيل","distance":"7 دقائق عن مستشفى السلام الدولي","details":"شقق فندقية واسعة بإطلالة هادئة على النيل، مناسبة للعائلات والمرافقين في فترات النقاهة.","amenities":"شقة غرفتين وصالة · مطبخ مجهز · خدمة استقبال VIP بالمطار · مرافقة على مدار الساعة","price":"2,400 ج.م / ليلة (تقديري)"},{"title":"أجنحة رويال ريزيدنس — القاهرة الجديدة","distance":"10 دقائق عن مراكز القلب التخصصية","details":"إقامة هادئة في حي سكني راقٍ تمنح المريض الخصوصية والراحة بعد الخروج من المستشفى وقبل السفر.","amenities":"بيئة هادئة للتعافي · حديقة خاصة للمشي الموصى به · تعقيم دوري · إنترنت فائق السرعة","price":"2,100 ج.م / ليلة (تقديري)"}],"stayNotice":"تُحجز الإقامة وتُؤكد بناءً على الخطة الطبية وتاريخ الدخول المعتمد من المستشفى."},"faqsSection":{"eyebrow":"الأسئلة الشائعة","title":"كل ما تود معرفته عن تنظيم رحلتك العلاجية","intro":"إجابات واضحة وموثقة عن المراجعة الطبية، والتكاليف، والإقامة، والتأشيرات.","faqs":[{"q":"هل الأطباء والمستشفيات حقيقيون، وكيف أتحقق من مؤهلاتهم؟","a":"لكل طبيب ومستشفى شريك ملف رسمي موثق بالتراخيص والاعتمادات الرسمية (JCI / GAHAR). ولا ندرج أي جراح دون التحقق من شهاداته وتخصصه الدقيق وسجله المهني."},{"q":"هل يؤثر الجانب التجاري للتنسيق على الخطة الطبية؟","a":"أبداً. الفريق الطبي والاستشاري المعالج في المستشفى هو وحده من يحدد الخطة الطبية وفق مصلحة المريض. ونحن نفصح في كل عرض سعر عن رسوم التنسيق بشكل منفصل عن فاتورة المستشفى."},{"q":"ماذا يحدث إذا تغيرت الخطة الطبية أو تطلبت الحالة تمديد الإقامة؟","a":"يرافق كل عرض سعر سياسة مكتوبة توضح سياسة التمديد والتكاليف الإضافية المحتملة، ولا يتم اتخاذ أي إجراء إضافي إلا بموافقة المريض الخطية والاطلاع المسبق."},{"q":"كيف يتم سداد التكاليف؟","a":"تُدفع تكاليف العملية والفحوصات للمستشفى مباشرة وفق فواتير رسمية معتمدة، بينما تُسدد رسوم السكن والإقامة والانتقالات لخدمات التنسيق وفق الباقة المختارة."},{"q":"هل يحتاج المريض ومرافقه تأشيرة دخول لمصر؟","a":"يحصل مواطنو دول الخليج والعديد من الدول على تأشيرة دخول فورية أو إلكترونية بسهولة. وللجنسيات الأخرى، نقوم بإصدار خطاب دعوة طبية رسمي لتسهيل استخراج التأشيرة العلاجية."},{"q":"من أتواصل معه إذا احتجت مساعدة طارئة في مصر؟","a":"منسقك الشخصي متاح معك على مدار الساعة طوال مكوثك في مصر، بالإضافة لخط ساخن مع طوارئ المستشفى الشريك."}]},"aboutPage":{"eyebrow":"عن المنصة","title":"تنسيق طبي متخصص في جراحات وقسطرة القلب في مصر","desc":"تأسست المنصة بهدف سد الفجوة بين المرضى الدوليين وأرقى الكفاءات الطبية والمستشفيات المتخصصة في مصر، مع توفير تجربة سفر مريحة وإقامة فندقية تراعي أدق الاحتياجات الصحية.","missionTitle":"مهمتنا وقيمنا","mission":"تمكين المرضى وعائلاتهم من اتخاذ قرارات صحية مبنية على معرفة دقيقة ومراجعات طبية محايدة، مع الالتزام التام بالشفافية المالية وفصل القرارات الطبية عن المصالح اللوجستية.","features":[{"title":"تركيز تخصصي خالص","text":"نركز حصرياً على أمراض وجراحات وقسطرة القلب لضمان أعلى درجات الإتقان والخبرة الدقيقة."},{"title":"شفافية مالية مطلقة","text":"لا توجد رسوم خفية. نوضح للمريض ما يُسدد للمستشفى مباشرة وما يخص السكن والانتقالات."},{"title":"أمان المريض أولاً","text":"لا نقبل أي حالة دون دراسة تقاريرها من لجنة استشارية للتأكد من ملاءمتها للسفر (Fit to Fly)."}]},"contactPage":{"eyebrow":"تواصل معنا","title":"نحن هنا لمساعدتك والإجابة عن جميع استفساراتك","desc":"تواصل مع فريق التنسيق الطبي للحصول على استشارة مبدئية أو الاستفسار عن تفاصيل السفر والإقامة.","phoneLabel":"الهاتف وواتساب","phone":"+20 11 2739 2979","emailLabel":"البريد الإلكتروني","email":"coordination@cardiac-egypt.com","addressLabel":"مكتب التنسيق الرئيسي","address":"القاهرة والجيزة — جمهورية مصر العربية","formTitle":"أرسل رسالة أو استفساراً","sendBtn":"إرسال الاستفسار (معاينة)"},"privacyPage":{"eyebrow":"الخصوصية وحماية البيانات","title":"سياسة الخصوصية وسرية الملفات الطبية","intro":"نلتزم بأعلى معايير السرية الطبية وحماية البيانات الشخصية والصحية لمرضانا وفق المعايير والقوانين المعمول بها.","sections":[{"title":"1. جمع واستخدام البيانات الطبية","body":"لا يتم استخدام البيانات الصحية أو التقارير إلا لغرض المراجعة السريرية من قِبل الأطباء الاستشاريين المخولين والمستشفيات الشريكة لتحديد خيارات العلاج."},{"title":"2. سرية التقارير والفحوصات","body":"تُرسل التقارير عبر قنوات مشفرة ولا يتم نشرها أو مشاركتها مع أي أطراف ثالثة غير مشاركة في رحلة العلاج والتنسيق."},{"title":"3. حقوق المريض","body":"يحق للمريض طلب حذف ملفاته أو سحب موافقته في أي وقت قبل إتمام التعاقد دون أي مساءلة أو التزام."}]},"termsPage":{"eyebrow":"الشروط والسياسات","title":"الشروط والأحكام العامة وسياسة الإلغاء","intro":"تنظم هذه الشروط العلاقة بين المريض والمنصة كجهة تنسيق رعاية وإقامة وسفر.","sections":[{"title":"1. طبيعة الخدمة وحدود المسؤولية","body":"المنصة جهة تنسيق لوجستي وإداري وسياحي طبي. القرارات السريرية والتشخيصات والإجراءات الطبية والجراحية هي مسؤولية المستشفى المرخص والطبيب المعالج حصرياً."},{"title":"2. عروض الأسعار والصلاحية","body":"عروض الأسعار المبدئية مبنية على مراجعة التقارير المرفقة وتعتبر تقديرية لحين إجراء الفحص السريري المباشر وتأكيد الخطة من المستشفى."},{"title":"3. سياسة الإلغاء وتعديل المواعيد","body":"تخضع شروط الإلغاء والاسترداد لسياسة المستشفى ومكان الإقامة المحجوز، وتوضح للمريض كتابةً قبل سداد أي مبالغ مقدمة."}]}},
+  en: {"langCode":"en","dir":"ltr","brandName":"CARDIAC CARE EGYPT","brandSub":"CARDIAC CARE & ACCOMMODATION","topLabel":"Interactive preview — illustrative data only","modeTag":"Prototype","headerCta":"Request an Initial Medical Assessment","footerNote":"Design and workflow mockup only; it does not submit data or represent a live medical system.","emergency":"Medical emergency? If you have severe chest pain or shortness of breath, contact local emergency services immediately and do not wait for this website.","nav":{"home":"Public Website","specialties":"Cardiac Specialties","hospitals":"Hospitals & Doctors","technology":"Medical Technology","journey":"Patient Journey","accommodation":"Travel & Stay","assessment":"Assessment Request","portal":"Patient Portal","ops":"Operations Hub","finance":"Finance & Margin","about":"About Us","contact":"Contact","faqs":"FAQs","privacy":"Privacy Policy","terms":"Terms & Conditions"},"home":{"eyebrow":"An initial medical review, with no commitment to travel","heroTitle":"Share your medical reports and understand your options before deciding to travel","heroDesc":"A specialized cardiac team in Egypt reviews your file and provides written preliminary feedback and clear treatment options. There is no fee for this step. If you choose to proceed, our team coordinates clinical care, hospital-adjacent recovery suites, and transport through your safe return.","ctaPrimary":"Request an Initial Medical Assessment","ctaSecondary":"Explore Specialties & Options","heroArtBadge":"CARDIAC CARE · EGYPT","heroArtTitle":"A clearer journey, starting with thorough clinical review.","heroArtSub":"Coordinating clinical care, recovery suites and travel around each patient's individual needs.","heroArtNote":"01 / 05 — Clinical review before any financial commitment","coordinationEyebrow":"Our Role in Your Journey","coordinationTitle":"Dedicated Coordination Centered on Safety and Transparency","coordinationDesc":"We are a specialized coordination team for cardiac medical travel and recovery in Egypt. We do not make independent medical decisions; instead, we connect you with verified senior cardiac surgeons, accredited hospitals, and seamless travel logistics.","coordinationPillars":[{"num":"01","title":"Thorough File Review","text":"We verify document completeness and forward your diagnostic reports to our surgical review board with zero preliminary assessment fees."},{"num":"02","title":"Transparent Pricing","text":"Clear written quotations detailing hospital inpatient fees separately from accommodation and coordination services, with no hidden margins."},{"num":"03","title":"Recovery Hospitality","text":"Hospital-adjacent hotel suites and serviced residences equipped for post-procedure cardiac recovery, with companion rooms and nursing support."},{"num":"04","title":"Dedicated Personal Care","text":"A named coordinator greets you at the airport, assists with hospital administration, and remains your point of contact through your safe return home."}],"specialtiesEyebrow":"Surgical Disciplines","specialtiesTitle":"Seven Specialized Cardiac Disciplines","specialtiesIntro":"Select the specialty closest to your clinical diagnosis to review procedure details, required reports, and coordination milestones.","hospitalsEyebrow":"Hospitals & Medical Professionals","hospitalsTitle":"Accredited Heart Centers and Leading Cardiac Surgeons","hospitalsIntro":"We work exclusively with internationally accredited hospitals (JCI and GAHAR certified) and surgeons holding verified UK, US, or European fellowships.","techEyebrow":"Clinical Infrastructure","techTitle":"Advanced Cardiac Technology & Global Device Manufacturers","techIntro":"Our partner centers utilize state-of-the-art hybrid operating rooms, advanced catheterization laboratories, and certified medical devices from established global manufacturers.","journeyEyebrow":"How the Journey Works","journeyTitle":"An 8-Stage Pathway from Initial Inquiry Through Safe Return","journeyIntro":"Every milestone is clearly defined with clinical reviews and dedicated logistical oversight to ensure complete safety and peace of mind.","stayEyebrow":"Logistics & Hospitality","stayTitle":"Where You and Your Companion Will Stay in Cairo","stayIntro":"Curated recovery suites and serviced residences minutes away from partner hospitals in 6th of October, Maadi, and New Cairo.","faqEyebrow":"Common Concerns Answered","faqTitle":"Common Patient Concerns, Answered with Total Clarity","faqIntro":"Traveling abroad for cardiac treatment is a major decision. We provide upfront, transparent answers before you commit.","finalCtaTitle":"Ready to Understand Your Treatment Options?","finalCtaDesc":"Submit your basic contact information and existing reports. Our case coordinator will reach out promptly to outline next steps with zero obligation.","finalCtaBtn":"Request an Initial Medical Assessment Now"},"specialtiesList":[{"id":"interventional","name":"Interventional Cardiology & Stents","enName":"Interventional Cardiology","desc":"Coronary angiography, balloon angioplasty, and drug-eluting stent placement with rapid recovery and minimal hospital stay.","overview":"Interventional cardiology provides catheter-based evaluation and revascularization of narrowed or blocked coronary arteries without the need for open-chest surgery. Performed predominantly via transradial (wrist) access, offering rapid ambulation and short hospitalization.","indications":["Stable and unstable angina pectoris","Acute coronary syndromes & myocardial infarction","Multivessel coronary artery disease","Restenosis assessment of prior stents"],"documentsRequired":["Prior coronary angiogram report and imaging disc (DICOM CD)","Recent resting echocardiogram (Echo) report","12-lead ECG, recent kidney function (Creatinine/eGFR), and blood glucose"],"journeySummary":"Single-night hospital inpatient stay in most cases, followed by 2 to 3 days in our quiet recovery suite prior to flight clearance.","faqs":[{"q":"How long is the procedure and post-procedure recovery?","a":"The procedure typically takes 45 to 90 minutes. Patients usually walk within hours and are cleared for return air travel within 4 to 5 days."},{"q":"What types of stents are utilized?","a":"Partner hospitals utilize latest-generation drug-eluting stents (Everolimus/Zotarolimus-eluting) with proven clinical efficacy and minimal restenosis rates."}]},{"id":"cabg","name":"Coronary Artery Bypass Grafting (CABG)","enName":"Coronary Artery Bypass Grafting","desc":"Surgical revascularization for complex, multivessel coronary disease performed by fellowship-trained cardiac surgeons.","overview":"Coronary Artery Bypass Grafting (CABG) restores adequate myocardial blood perfusion by grafting healthy arteries or veins (such as internal mammary arteries or saphenous veins) to bypass severe coronary blockages. Performed with on-pump or beating-heart (off-pump) techniques.","indications":["Left main coronary artery stenosis","Triple vessel disease with diminished left ventricular function","Complex diabetic coronary artery disease"],"documentsRequired":["Coronary angiography disc (DICOM CD)","Comprehensive echocardiogram assessing ejection fraction (LVEF)","Multislice coronary CT scan (if available)","Detailed medical summary of comorbidities and current medication regimen"],"journeySummary":"5 to 7 days inpatient stay (including ICU step-down), followed by 7 to 10 days in an equipped recovery suite before fit-to-fly certification.","faqs":[{"q":"When is it safe to fly home after bypass surgery?","a":"The operating surgical team evaluates sternal stability, hemoglobin levels, and rhythm stability, typically clearing patients for flight between 10 and 14 days post-op."},{"q":"Is home nursing available at our recovery residence?","a":"Yes, we arrange scheduled nursing visits to check vitals, manage wound dressings, and guide respiratory physiotherapy at your suite."}]},{"id":"valves","name":"Heart Valve Surgery (TAVI / SAVR)","enName":"Heart Valve Surgery","desc":"Surgical valve repair and replacement or transcatheter aortic valve implantation (TAVI) for high-risk and elderly patients.","overview":"Comprehensive treatment for severe aortic and mitral valve stenosis or regurgitation. Delivered either via transcatheter aortic valve implantation (TAVI) without median sternotomy, or through surgical repair or replacement using advanced bioprosthetic or mechanical valves.","indications":["Severe calcific aortic stenosis in elderly or frail patients","Severe symptomatic mitral regurgitation","Prosthetic valve deterioration or chronic endocarditis"],"documentsRequired":["Dedicated TAVI protocol contrast CT angiogram","Transesophageal echocardiogram (TEE) or 3D transthoracic echo","Full laboratory panel including renal, hepatic, and coagulation profiles"],"journeySummary":"TAVI involves 48 hours of inpatient observation with rapid recovery, whereas surgical valve replacement involves 5 to 7 days hospital stay followed by structured recovery.","faqs":[{"q":"What is the key advantage of TAVI over conventional valve surgery?","a":"TAVI avoids open-heart surgery and cardiopulmonary bypass, accessing the valve transfemorally through the groin, resulting in drastically reduced recovery time."},{"q":"How long do modern biological heart valves last?","a":"Contemporary anti-calcification treated pericardial tissue valves typically provide durability of 15 to 20 years without lifelong anticoagulation requirements."}]},{"id":"mics","name":"Minimally Invasive Cardiac Surgery (MICS)","enName":"Minimally Invasive Cardiac Surgery","desc":"Valve surgery and single-vessel bypass performed through small lateral intercostal mini-thoracotomies.","overview":"Minimally Invasive Cardiac Surgery achieves surgical valve repairs, replacements, and coronary grafts through small 5-6 cm intercostal incisions between the ribs, avoiding full sternotomy, minimizing operative blood loss, and expediting functional recovery.","indications":["Mitral and tricuspid valve repair or replacement","Single-vessel bypass (LIMA to LAD)","Atrial septal defect (ASD) closure and benign cardiac tumor resection"],"documentsRequired":["High-definition echocardiogram report","Contrast chest CT angiogram evaluating intercostal anatomy and femoral vessel caliber","Coronary angiography for patients over 40"],"journeySummary":"3 to 4 days hospital stay followed by 5 days in our recovery suite, with significantly reduced pain and barely visible cosmetic scarring.","faqs":[{"q":"Is every cardiac patient a candidate for MICS?","a":"Suitability depends on thoracic anatomy, vascular access, and cardiac pathology. The surgical board evaluates CT scans to determine whether minimally invasive access is safe."}]},{"id":"pediatric","name":"Pediatric & Congenital Heart Surgery","enName":"Pediatric & Congenital Heart Surgery","desc":"Specialized pediatric surgical correction for infants and children with complex structural and congenital heart defects.","overview":"Corrective and palliative surgical treatment for congenital heart defects in infants and pediatric patients, supported by dedicated pediatric cardiac intensive care units (PICU) and multidisciplinary pediatric cardiologists and intensivists.","indications":["Tetralogy of Fallot","Transposition of the Great Arteries (TGA)","Ventricular and atrial septal defects (VSD / ASD)","Coarctation of the aorta"],"documentsRequired":["Color Doppler pediatric echocardiogram report","Cardiac MRI or multidetector CT (if available)","Pediatrician growth chart, birth history, and current clinical summary"],"journeySummary":"Parental rooming-in during inpatient recovery, followed by spacious family accommodation in quiet residential districts in Cairo.","faqs":[{"q":"Can parents stay with the child throughout hospitalization?","a":"Yes, partner hospitals provide parental rooming-in within inpatient pediatric suites, and structured daily visiting protocols in the pediatric ICU."}]},{"id":"ep","name":"Electrophysiology & Pacemaker Therapy","enName":"Electrophysiology & Pacemakers","desc":"Arrhythmia mapping, catheter radiofrequency/cryoablation, and advanced pacemaker/ICD/CRT device implantation.","overview":"Diagnostic electrophysiology studies and curative catheter ablation of rhythm disturbances using advanced 3D anatomical mapping, alongside surgical implantation of permanent pacemakers, implantable cardioverter-defibrillators (ICD), and biventricular devices (CRT).","indications":["Paroxysmal and persistent atrial fibrillation","Supraventricular tachycardias (SVT, WPW syndrome)","Symptomatic sick sinus syndrome and high-grade AV block","Severe congestive heart failure requiring cardiac resynchronization (CRT-D)"],"documentsRequired":["12-lead ECG during rhythm episodes","24-hour or 48-hour Holter monitoring report","Transthoracic echocardiogram assessing ventricular chamber dimensions and ejection fraction"],"journeySummary":"Minimally invasive catheter procedure requiring 24 to 48 hours hospital stay, followed by 2 days for device programming and baseline stability testing.","faqs":[{"q":"Can I travel by air with an implanted pacemaker or defibrillator?","a":"Yes. Patients receive an international device identification card for airport security, and air travel is completely safe 48 to 72 hours post-implantation."}]},{"id":"aortic","name":"Aortic Arch & Aneurysm Surgery","enName":"Aortic Surgery","desc":"Surgical and endovascular repair (TEVAR / EVAR) for thoracic and abdominal aortic aneurysms and dissections.","overview":"Surgical and catheter-based reconstruction of the aorta—the body's primary arterial vessel—treating aneurysmal dilation or chronic dissection through open graft replacement or stent-graft endovascular exclusion (TEVAR/EVAR) to avert rupture.","indications":["Thoracic aortic aneurysm exceeding 5.0 to 5.5 cm","Chronic type B aortic dissection with aneurysmal degeneration","Marfan syndrome and connective tissue aortic root dilation"],"documentsRequired":["Full arterial contrast CT aortogram from skull base through iliac bifurcations","Echocardiogram detailing aortic root dimensions and aortic regurgitation","Comprehensive renal function panel and coagulation profile"],"journeySummary":"5 to 7 days specialized inpatient observation with strict blood pressure optimization prior to fit-to-fly clearance.","faqs":[{"q":"What is TEVAR endovascular repair?","a":"TEVAR involves deploying a fabric-covered stent graft through the femoral artery in the groin into the diseased aortic segment without opening the chest cavity."}]}],"hospitalsSection":{"eyebrow":"Hospitals & Partners","title":"Internationally Accredited Cardiac Centers in Egypt","desc":"We connect you exclusively with verified cardiac hospitals in Cairo and Giza recognized for clinical excellence, patient safety, and advanced technology.","disclaimer":"Credibility Note: All listed hospital facilities and clinical consultants undergo rigorous license and credential verification prior to formal proposal issuance. We never publish unverified doctor counts or invented partnerships.","hospitals":[{"name":"Dar Al Fouad Hospital — 6th of October","type":"Specialized Cardiac Center of Excellence","accreditation":"JCI Accredited (Joint Commission International, USA) for five consecutive terms","highlights":"24/7 dedicated cardiac catheterization suites, hybrid operating rooms, distinguished cardiothoracic surgical theater, and specialized cardiac intensive care units.","location":"6th of October City — Giza (5 minutes to Nile Medical Suites)","specialties":["Interventional Cardiology & Stents","Coronary Bypass Grafting (CABG)","Transcatheter Aortic Valve (TAVI)","Congenital Pediatric Surgery"]},{"name":"As-Salam International Hospital — Maadi","type":"Multispecialty International Medical Center","accreditation":"JCI Accredited & Canadian Healthcare Quality Partner","highlights":"Direct Nile waterfront views, dedicated electrophysiology laboratory with 3D mapping, minimally invasive valve repair units, and VIP international patient wing.","location":"Nile Corniche — Maadi, Cairo (7 minutes to Maadi Luxury Flats)","specialties":["Electrophysiology & CRT/ICD Devices","Minimally Invasive Valve Repair","Peripheral & Aortic Endovascular Surgery","Advanced Cardiac Diagnostics"]},{"name":"New Cairo Specialized Heart Center","type":"Advanced Cardiothoracic Surgical Facility","accreditation":"Accredited by Egyptian General Authority for Healthcare Accreditation (GAHAR)","highlights":"Ultra-clean positive-pressure cardiac operating suites, serene gated suburban setting, and dedicated suites for international patients and companions.","location":"5th Settlement — New Cairo (10 minutes to Royal Residence Suites)","specialties":["Minimally Invasive Cardiac Surgery (MICS)","Pediatric Septal Defect Repairs","Thoracic Aortic Aneurysm Stenting (TEVAR)"]}],"doctorsStandardTitle":"Consultant Selection & Credibility Standards","doctorsStandards":["Board certification, British Fellowship (FRCS), or equivalent international credentials with active clinical practice licenses.","Documented procedural volume and clinical safety benchmarks conforming with European Society of Cardiology (ESC) and American College of Cardiology (ACC) standards.","Written pledge of objective clinical disclosure without commercial bias or unnecessary interventions.","Availability of formal pre-travel video consultations to review diagnostic findings directly with the patient."]},"technologySection":{"eyebrow":"Clinical Standards","title":"Certified Medical Devices & Technology Manufacturers","desc":"We ensure all medical devices utilized in your procedure—including drug-eluting stents, heart valves, and pacemakers—originate from world-renowned, regulated manufacturers.","notice":"Transparency Disclosure: Manufacturer and product references illustrate the clinical and technical standards upheld in our partner cardiac centers. They do not constitute commercial endorsement or exclusive brand relationships. Exact device specifications are confirmed in writing within each patient proposal.","categories":[{"title":"Heart Valves & Transcatheter Systems","manufacturers":"Edwards Lifesciences · Medtronic · Abbott Vascular","details":"Advanced bioprosthetic transcatheter aortic valves (TAVI) featuring anti-calcification tissue preservation, alongside contemporary cobalt-chromium drug-eluting stents releasing antiproliferative agents."},{"title":"Cardiac Rhythm Management & Pacemakers","manufacturers":"Medtronic · Boston Scientific · Biotronik","details":"MRI-conditional CRT-D and ICD pacemakers equipped with secure wireless home telemetry, enabling ongoing post-discharge rhythm monitoring after patients return home."},{"title":"Catheterization Imaging & 3D Mapping Systems","manufacturers":"Siemens Healthineers · Philips Healthcare · Biosense Webster","details":"Low-dose digital biplane fluoroscopy angiography suites paired with CARTO 3 electro-anatomical 3D mapping systems for millimeter-precise catheter ablation."},{"title":"Extracorporeal Life Support & Surgical ICU","manufacturers":"Getinge / Maquet · Abbott (CentriMag) · Terumo","details":"Advanced extracorporeal membrane oxygenation (ECMO) and intra-aortic balloon counterpulsation systems ensuring maximum safety during complex surgical operations."}]},"journeySection":{"eyebrow":"Clinical Pathway","title":"Your 8-Stage Medical Journey from Inquiry to Safe Return","desc":"A milestone-driven pathway guaranteeing independent medical validation and supportive hospitality at every point.","steps":[{"step":"01","title":"Initial Inquiry","desc":"You connect with our team and share your primary concerns. A personal coordinator is assigned to explain the process with zero financial commitment."},{"step":"02","title":"Medical Information Collection","desc":"Guidance on gathering recent echocardiograms, angiograms, and blood work, securely transferred through our verified intake channel."},{"step":"03","title":"Preliminary Medical Review","desc":"Verification of document completeness and preparation of an initial clinical summary submitted to our consultant board in Egypt."},{"step":"04","title":"Treating Provider Review","desc":"A named cardiac surgical consultant reviews your file and formulates a written diagnostic opinion and recommended procedure."},{"step":"05","title":"Treatment Proposal & Itemized Quote","desc":"A transparent written proposal separating hospital inpatient costs from accommodation and coordination fees, with clear inclusions."},{"step":"06","title":"Travel & Accommodation Coordination","desc":"Electronic medical visa support, reservation of hospital-adjacent recovery suites for patient and companion, and hospital schedule confirmation."},{"step":"07","title":"Arrival, Hospital Admission & Inpatient Care","desc":"Airport tarmac or terminal greeting, transfer to your residence, in-person clinical consultations, and successful procedure completion."},{"step":"08","title":"Suite Recovery & Post-Return Follow-up","desc":"Restful stay in your recovery suite with nursing check-ins, formal discharge summary issuance, and scheduled remote telehealth follow-up."}]},"accommodationSection":{"eyebrow":"Hospitality & Stay","title":"Travel Logistics, Accommodation, and Comprehensive Patient Support","desc":"We coordinate all logistical arrangements surrounding your medical care so you and your companion can focus entirely on rest and recovery.","services":[{"title":"Equipped Recovery Suites","desc":"Serviced hotel apartments selected for comfort and wheelchair accessibility, minutes from cardiac centers, featuring equipped kitchens and quiet recovery environments."},{"title":"Airport & Medical Transfers","desc":"Private executive vehicle greeting upon Cairo arrival, scheduled transfers between suite and hospital, and fully equipped medical ambulances when required."},{"title":"Companion & Family Arrangements","desc":"Dedicated companion bedrooms, family suites, and arrangements for dietary-friendly meals tailored for cardiac recovery diets."},{"title":"Dedicated Personal Coordinator","desc":"An assigned care coordinator escorts you to clinical appointments, manages hospital paperwork, and provides on-call support throughout your stay."},{"title":"Remote Telehealth Follow-up","desc":"Post-departure video consultations with your treating cardiac surgeon to review local lab reports and ensure ongoing stability."}],"stayItems":[{"title":"Nile Medical Suites & Residences — 6th of October","distance":"5 minutes from Dar Al Fouad Hospital","details":"Furnished hotel suites engineered for cardiac recovery, equipped with adjustable medical beds and full wheelchair accessibility.","amenities":"Adjustable medical bed · Companion bedroom · On-call nursing · Daily hospital shuttle","price":"EGP 1,850 / night (indicative)"},{"title":"Maadi River View Luxury Flats — Nile Corniche","distance":"7 minutes from As-Salam International Hospital","details":"Spacious waterfront serviced residences providing a tranquil, clean Nile environment for patients and their families.","amenities":"2-bedroom apartment · Fully equipped kitchen · VIP airport greeting · 24/7 care concierge","price":"EGP 2,400 / night (indicative)"},{"title":"Royal Residence Suites — New Cairo","distance":"10 minutes from East Cairo Cardiac Centers","details":"Quiet gated residential apartments offering patient privacy, gentle walking gardens, and restful recovery prior to your flight home.","amenities":"Peaceful recovery setting · Private walking path · Daily sanitization · High-speed Wi-Fi","price":"EGP 2,100 / night (indicative)"}],"stayNotice":"Accommodation bookings are confirmed in alignment with your medical admission dates approved by the treating hospital."},"faqsSection":{"eyebrow":"Frequently Asked Questions","title":"Answers to Common Questions on Medical Travel to Egypt","intro":"Clear, verified details regarding clinical reviews, pricing structures, recovery accommodation, and entry visas.","faqs":[{"q":"Are the hospital partners and doctors authentic, and how can I verify them?","a":"Every doctor and hospital in our network has a verified official profile with verified accreditation numbers (JCI / GAHAR). We verify medical licenses, procedural volume, and academic credentials before publishing."},{"q":"Do commercial interests influence the medical plan?","a":"Never. Your treating medical consultant determines the clinical plan exclusively based on medical evidence. We maintain complete transparency by itemizing coordination service fees separately from direct hospital invoices."},{"q":"What occurs if my medical plan changes or my stay is extended?","a":"Every quotation is accompanied by written terms detailing extension rates and protocol variations. No additional procedure is performed without prior patient consultation and consent."},{"q":"How are payments handled?","a":"Hospital surgical fees are paid directly to the hospital according to authorized medical bills. Accommodation and concierge packages are settled with our coordination office per your chosen package."},{"q":"Do patients and companions require a visa for Egypt?","a":"Citizens of the GCC and numerous countries receive visas upon arrival or via standard e-visa portals. For other nationalities, we issue an official medical invitation letter to expedite medical visa issuance."},{"q":"Who do I contact if I require support while in Cairo?","a":"Your dedicated personal care coordinator is available around the clock throughout your stay in Egypt, backed by direct communication lines with hospital emergency departments."}]},"aboutPage":{"eyebrow":"About Our Platform","title":"Specialized Cardiac Medical Travel Coordination in Egypt","desc":"Established to bridge international patients with Egypt's premier cardiac surgeons and accredited medical centers, delivering an end-to-end journey that combines clinical excellence with serene recovery hospitality.","missionTitle":"Our Mission & Ethical Standards","mission":"Empowering cardiac patients and their families to make well-informed healthcare decisions supported by impartial preliminary reviews, absolute pricing transparency, and dedicated hospitality.","features":[{"title":"Pure Cardiac Specialization","text":"We focus exclusively on cardiology and cardiothoracic surgery to ensure depth of clinical knowledge and procedural familiarity."},{"title":"Complete Financial Transparency","text":"Zero hidden markups. We clarify exactly what is paid to the hospital versus accommodation and logistical services."},{"title":"Patient Safety First","text":"Every case is vetted by our clinical review board to verify fit-to-fly suitability before confirming travel arrangements."}]},"contactPage":{"eyebrow":"Get in Touch","title":"We Are Here to Guide and Support Your Healthcare Journey","desc":"Reach out to our case coordination team for initial guidance or inquiries regarding cardiac specialists and accommodation options in Egypt.","phoneLabel":"Phone & WhatsApp","phone":"+20 11 2739 2979","emailLabel":"Email Contact","email":"coordination@cardiac-egypt.com","addressLabel":"Head Coordination Office","address":"Cairo & Giza — Arab Republic of Egypt","formTitle":"Send an Inquiry or Message","sendBtn":"Send Inquiry (Preview)"},"privacyPage":{"eyebrow":"Privacy & Data Protection","title":"Patient Confidentiality and Medical Data Privacy Policy","intro":"We uphold strict confidentiality regarding all personal and medical records shared with our coordination platform.","sections":[{"title":"1. Medical Data Collection & Purpose","body":"Health records, diagnostic scans, and clinical notes are used exclusively to facilitate preliminary medical reviews by authorized cardiac consultants and partner hospitals."},{"title":"2. Confidential Transmission","body":"Reports are transferred via encrypted channels and are never disclosed or sold to third parties outside your direct care coordination team."},{"title":"3. Patient Rights & Data Deletion","body":"Patients maintain the right to request deletion of their submitted files or revoke preliminary assessment consent at any time prior to travel confirmation."}]},"termsPage":{"eyebrow":"Terms & Conditions","title":"Platform Terms of Service and Coordination Agreement","intro":"These terms govern the relationship between the patient and our coordination team regarding medical travel facilitation.","sections":[{"title":"1. Scope of Coordination Services","body":"Our platform provides non-clinical administrative, logistical, and hospitality coordination. Clinical evaluations, surgical decisions, and treatment outcomes remain the exclusive responsibility of licensed hospitals and treating physicians."},{"title":"2. Quotations and Validity","body":"Preliminary cost estimates are prepared based on uploaded reports and remain indicative until an in-person clinical examination confirms the definitive plan at the hospital."},{"title":"3. Cancellation and Schedule Adjustments","body":"Cancellation and refund terms are subject to the policies of the selected hospital and accommodation provider, detailed in writing before formal booking confirmation."}]}}
+};
+
+// Existing module data from Platform-Mockup
+const portalData = {
+  ar: {
+    title: "بوابة المريض والمرافق",
+    desc: "مساحة واحدة لمتابعة حالة الطلب والخطوة التالية والملفات والرسائل المصرح بها.",
+    current: "الحالة الحالية",
+    inReview: "استكمال ومراجعة الملف الطبي",
+    next: "الخطوة التالية",
+    nextVal: "تواصل المنسق الشخصي",
+    nextDesc: "رفع المستندات عبر قناة آمنة بعد التواصل مع منسق الحالة.",
+    companion: "المرافق أو ولي الأمر",
+    companionDesc: "دعوة مرافق بصلاحيات مستقلة؛ الوصول للملف الطبي يتطلب موافقة مناسبة أو سندًا قانونيًا.",
+    companionBtn: "معاينة دعوة مرافق",
+    documents: "المستندات",
+    docsVal: "بانتظار الاستكمال",
+    messages: "رسائل المنسق",
+    messagesVal: "1 جديدة",
+    journeyBtn: "عرض جدول الرحلة"
+  },
+  en: {
+    title: "Patient & Companion Portal",
+    desc: "A centralized dashboard to monitor case review, quotation options, and accommodation confirmations.",
+    current: "Current status",
+    inReview: "Medical file under clinical review",
+    next: "Next step",
+    nextVal: "Coordinator contact",
+    nextDesc: "Submit reports through an encrypted channel after your coordinator makes contact.",
+    companion: "Companion or Guardian",
+    companionDesc: "Invite a companion with independent permissions; medical access requires appropriate patient consent.",
+    companionBtn: "Preview Companion Invite",
+    documents: "Documents",
+    docsVal: "Awaiting completion",
+    messages: "Coordinator messages",
+    messagesVal: "1 New message",
+    journeyBtn: "View Journey Schedule"
+  }
+};
+
+const opsData = {
+  ar: {
+    title: "النظام التشغيلي — مساحة الحالة الموحدة",
+    desc: "تجربة موظف واحدة تربط ملخص المريض والطب والعروض والرحلة والمالية وسجل التدقيق.",
+    case: "حالة تجريبية · لا توجد بيانات مريض حقيقية",
+    caseId: "CASE-DEMO-001",
+    status: "استكمال الملف",
+    caseStageLabel: "مرحلة سير العمل",
+    advance: "معاينة الانتقال للمرحلة التالية",
+    reset: "إعادة ضبط",
+    stageGuard: "يتطلب الانتقال اعتمادًا مناسبًا؛ هذه المعاينة لا تمنح اعتمادًا طبيًا أو تشغيليًا.",
+    sections: ["ملخص الحالة", "الملف الطبي", "المستشفى والعرض", "الرحلة والإقامة", "المالية", "سجل التدقيق"],
+    stages: ["طلب جديد", "استكمال الملف", "مراجعة طبية", "خطة وعرض", "تأكيد الرحلة", "العلاج والمتابعة"],
+    coordinators: ["غير معيّن", "أ. نوران الألفي (منسق تجريبي)"],
+    priorities: ["عادية", "عالية", "عاجلة"],
+    reviewers: ["غير معيّن", "د. طارق رشدي (مراجع مخوّل تجريبي)"],
+    reviewStatuses: ["معلق", "قيد المراجعة", "يحتاج معلومات إضافية"],
+    fileStatuses: ["بانتظار المستندات", "مكتمل للمراجعة"],
+    providerStatuses: ["لم يتم الاختيار", "بانتظار التحقق", "تم التحقق (تجريبي)"],
+    quoteStatuses: ["لم يُنشأ عرض", "مسودة", "بانتظار الاعتماد"],
+    bookingStatuses: ["غير محجوز", "قيد التنسيق", "مؤكد (تجريبي)"],
+    stays: ["أجنحة النيل الفندقية (6 أكتوبر)", "شقق المعادي النيلية"],
+    transfers: ["سيارة خاصة مجهزة", "إسعاف طبي مجهز من المطار"],
+    readinessTitle: "قائمة جاهزية السفر والإقامة",
+    checks: [
+      "تأكيد المستندات الطبية وفحص Fit-to-fly",
+      "تأكيد حجز الجناح الفندقي وتجهيز السرير للمريض والمرافق",
+      "تأكيد موعد المستشفى واستقبال المطار"
+    ],
+    clinicalGate: "اعتماد الفريق الطبي مطلوب قبل السفر",
+    auditTitle: "سجل الأحداث التجريبي",
+    auditItems: ["إنشاء حالة تجريبية", "تعيين منسق (أ. نوران)", "لا يوجد اعتماد طبي مسجل بعد"],
+    demoOnly: "بيانات توضيحية فقط — لا تحفظ ولا تُرسل."
+  },
+  en: {
+    title: "Operations Hub — Unified Staff Workspace",
+    desc: "A single coordinator workspace connecting patient triage, surgical approvals, recovery suites, and finance.",
+    case: "Demo case · No real patient data",
+    caseId: "CASE-DEMO-001",
+    status: "Medical file review",
+    caseStageLabel: "Workflow stage",
+    advance: "Preview next stage",
+    reset: "Reset demo",
+    stageGuard: "Advancing stages requires clinical validation; this preview does not grant actual clinical approval.",
+    sections: ["Case summary", "Medical file", "Provider & quote", "Journey & accommodation", "Finance", "Audit history"],
+    stages: ["New request", "File review", "Clinical evaluation", "Plan & quotation", "Journey confirmed", "Treatment & follow-up"],
+    coordinators: ["Unassigned", "Nouran Al-Alfy (Demo coordinator)"],
+    priorities: ["Routine", "High", "Urgent"],
+    reviewers: ["Unassigned", "Prof. Tarek Roushdy (Clinical Reviewer)"],
+    reviewStatuses: ["Pending", "Under review", "More information needed"],
+    fileStatuses: ["Awaiting documents", "Complete for review"],
+    providerStatuses: ["Not selected", "Verification pending", "Verified (demo)"],
+    quoteStatuses: ["No quote created", "Draft", "Awaiting approval"],
+    bookingStatuses: ["Not booked", "Being coordinated", "Confirmed (demo)"],
+    stays: ["Nile Medical Suites (6th October)", "Maadi River View Flats"],
+    transfers: ["Private equipped sedan", "Airport medical ambulance"],
+    readinessTitle: "Travel & accommodation readiness",
+    checks: [
+      "Fit-to-fly medical clearance verified",
+      "Recovery suite and companion room pre-booked",
+      "Hospital cath lab & airport greeting confirmed"
+    ],
+    clinicalGate: "Treating team approval required prior to travel",
+    auditTitle: "Demo Event History",
+    auditItems: ["Demo case created", "Coordinator assigned (Nouran)", "No clinical approval recorded yet"],
+    demoOnly: "Illustrative data only — nothing is saved or sent."
+  }
+};
+
+const financeData = {
+  ar: {
+    title: "المالية وتوزيع التكاليف والربحية",
+    desc: "فصل إيرادات الشركة عن أموال الغير، ومقارنة المتوقع بالفعلي بعد تسجيل الحركات والتسويات.",
+    revTitle: "إجمالي قيمة الحزمة المقدرة",
+    directHosp: "المستشفى المباشر (خارج إيراد الشركة)",
+    stayTransport: "الإقامة الفندقية والمواصلات",
+    coordinationFee: "رسوم التنسيق والرعاية المباشرة",
+    due: "مستحقات مفتوحة",
+    empty: "—",
+    note: "لا توجد أرقام مالية ملزمة في هذا الموكاب. الدفعات المباشرة للمستشفى لا تُسجل تلقائيًا كإيراد للشركة.",
+    demoBtnShow: "عرض سيناريو مالي توضيحي",
+    demoBtnHide: "إخفاء السيناريو التوضيحي",
+    demoLabel: "سيناريو افتراضي للتجربة فقط",
+    tableHead: ["البند والخدمة", "المسؤول عن الدفع", "القيمة المقدرة", "حالة التسجيل"],
+    tableRows: [
+      ["إجراء القسطرة واستبدال الصمام", "المستشفى الشريك مباشرة", 135000, "سداد مباشر للمستشفى"],
+      ["أجنحة النيل الفندقية (7 ليالٍ)", "الفندق / عبر الباقة", 12950, "مؤكد مع الحجز"],
+      ["الاستقبال والتنقلات الطبية", "خدمة اللوجستيات", 2500, "شامل الباقة"],
+      ["رسوم التنسيق والمرافقة 24/7", "الشركة المشغلة", 18500, "أتعاب خدمة معتمدة"]
+    ],
+    currencyNotice: "تتوفر خيارات تسعير بعدة عملات (ج.م / $ / ر.س / د.إ)"
+  },
+  en: {
+    title: "Journey Finance & Margin Transparency",
+    desc: "Separate company revenue from third-party hospital pass-throughs, with clear reconciliations.",
+    revTitle: "Estimated Package Total",
+    directHosp: "Direct Hospital (Excluded from revenue)",
+    stayTransport: "Accommodation & Transfers",
+    coordinationFee: "Coordination & Concierge Service",
+    due: "Open balances",
+    empty: "—",
+    note: "Figures in this mockup are illustrative. Direct hospital payments are never booked as company revenue.",
+    demoBtnShow: "Show illustrative finance scenario",
+    demoBtnHide: "Hide illustrative scenario",
+    demoLabel: "Hypothetical scenario for demonstration only",
+    tableHead: ["Line Item & Service", "Payment Recipient", "Estimated Amount", "Recording Status"],
+    tableRows: [
+      ["Cath & Valve Procedure", "Direct Partner Hospital", 135000, "Hospital Direct"],
+      ["Nile Medical Suites (7 Nights)", "Hotel / In Package", 12950, "Confirmed with Booking"],
+      ["Airport & Medical Transfers", "Logistics Service", 2500, "Included in Package"],
+      ["Coordination & Care Service 24/7", "Operating Company", 18500, "Fixed Coordination Fee"]
+    ],
+    currencyNotice: "Pricing references available in EGP, USD, SAR, and AED"
+  }
+};
+
+let lang = "ar";
+let theme = "nile";
+let activePage = "home";
+let selectedSpecialtyId = "interventional";
+let opsSection = 0;
+let caseStage = 0;
+let financeDemo = true;
+let activeCurrency = "EGP";
+
+const currencyRates = {
+  EGP: { rate: 1, arSym: "ج.م", enSym: "EGP" },
+  USD: { rate: 0.021, arSym: "$", enSym: "$" },
+  SAR: { rate: 0.078, arSym: "ر.س", enSym: "SAR" },
+  AED: { rate: 0.076, arSym: "د.إ", enSym: "AED" }
+};
+
+function d() { return dataStore[lang]; }
+
+function toggleLang() {
+  lang = (lang === "ar" ? "en" : "ar");
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === "ar" ? "rtl" : "ltr");
+  render();
+}
+
+function setTheme(v) {
+  theme = v;
+  document.body.classList.toggle("editorial", v === "editorial");
+  document.getElementById("nileBtn").classList.toggle("active", v === "nile");
+  document.getElementById("editorialBtn").classList.toggle("active", v === "editorial");
+}
+
+function showPage(pageId, extraParam) {
+  activePage = pageId;
+  if (pageId === "specialty" && extraParam) {
+    selectedSpecialtyId = extraParam;
+  }
+  // Close mobile nav if open
+  const navLinks = document.getElementById("navLinksContainer");
+  if (navLinks) navLinks.classList.remove("mobile-open");
+  
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function toggleMobileNav() {
+  const navLinks = document.getElementById("navLinksContainer");
+  if (navLinks) navLinks.classList.toggle("mobile-open");
+}
+
+function toggleFaqItem(el) {
+  const item = el.closest(".faq-item");
+  if (item) item.classList.toggle("open");
+}
+
+function formatCurr(egpAmount) {
+  const curr = currencyRates[activeCurrency];
+  const val = Math.round(egpAmount * curr.rate);
+  const sym = (lang === "ar" ? curr.arSym : curr.enSym);
+  return val.toLocaleString() + " " + sym;
+}
+
+function setCurrency(c) {
+  activeCurrency = c;
+  render();
+}
+
+function toggleFinanceDemo() {
+  financeDemo = !financeDemo;
+  render();
+}
+
+function advanceCase() {
+  if (caseStage >= 3) {
+    const el = document.getElementById("opsNotice");
+    if (el) el.textContent = opsData[lang].stageGuard;
+    return;
+  }
+  caseStage++;
+  render();
+}
+
+function resetCase() {
+  caseStage = 0;
+  opsSection = 0;
+  render();
+}
+
+function selectOpsSide(idx) {
+  opsSection = idx;
+  render();
+}
+
+/* =========================================================
+   PAGE RENDERING FUNCTIONS
+   ========================================================= */
+
+function renderHome() {
+  const h = d().home;
+  return [
+    '<section class="hero">',
+    '  <div>',
+    '    <div class="eyebrow">' + h.eyebrow + '</div>',
+    '    <h1>' + h.heroTitle + '</h1>',
+    '    <p>' + h.heroDesc + '</p>',
+    '    <div class="head-actions">',
+    '      <button class="btn" onclick="showPage(\'assessment\')">' + h.ctaPrimary + '</button>',
+    '      <button class="btn quiet" onclick="showPage(\'specialties\')">' + h.ctaSecondary + '</button>',
+    '    </div>',
+    '  </div>',
+    '  <div class="hero-art">',
+    '    <div class="eyebrow" style="color:#E6C5A4">' + h.heroArtBadge + '</div>',
+    '    <div class="big">' + h.heroArtTitle + '</div>',
+    '    <p style="color:#FFFFFF;margin:0;font-size:15px">' + h.heroArtSub + '</p>',
+    '    <span class="small" style="color:#E6DED0">' + h.heroArtNote + '</span>',
+    '  </div>',
+    '</section>',
+    
+    '<hr class="rule">',
+
+    // Section 1: Coordination Pillars
+    '<section>',
+    '  <div class="eyebrow">' + h.coordinationEyebrow + '</div>',
+    '  <h2 class="section-title">' + h.coordinationTitle + '</h2>',
+    '  <p class="section-intro">' + h.coordinationDesc + '</p>',
+    '  <div class="grid">',
+    h.coordinationPillars.map(p => 
+      '    <div class="panel" style="margin-bottom:0">' +
+      '      <span class="eyebrow" style="font-size:15px">' + p.num + '</span>' +
+      '      <h3>' + p.title + '</h3>' +
+      '      <p style="margin:0;font-size:14.5px;color:var(--muted);line-height:1.6">' + p.text + '</p>' +
+      '    </div>'
+    ).join(''),
+    '  </div>',
+    '</section>',
+
+    '<hr class="rule">',
+
+    // Section 2: Specialties preview
+    '<section>',
+    '  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;flex-wrap:wrap;gap:12px">',
+    '    <div>',
+    '      <div class="eyebrow">' + h.specialtiesEyebrow + '</div>',
+    '      <h2 class="section-title" style="margin:0">' + h.specialtiesTitle + '</h2>',
+    '    </div>',
+    '    <button class="btn secondary" onclick="showPage(\'specialties\')">' + (lang === "ar" ? "عرض جميع التخصصات ←" : "View All Specialties →") + '</button>',
+    '  </div>',
+    '  <p class="section-intro">' + h.specialtiesIntro + '</p>',
+    '  <div class="grid">',
+    d().specialtiesList.slice(0, 6).map(sp => 
+      '    <div class="card-link" onclick="showPage(\'specialty\', \'' + sp.id + '\')">' +
+      '      <div>' +
+      '        <span class="tag good" style="margin-bottom:10px">' + sp.enName + '</span>' +
+      '        <h3 style="margin:6px 0 10px">' + sp.name + '</h3>' +
+      '        <p style="margin:0 0 14px;font-size:14px;color:var(--muted);line-height:1.6">' + sp.desc + '</p>' +
+      '      </div>' +
+      '      <div style="border-top:1px solid var(--line);padding-top:10px;font-weight:600;font-size:13.5px;color:var(--primary)">' +
+      (lang === "ar" ? "تفاصيل الإجراء والمستندات ←" : "Procedure & Document Details →") +
+      '      </div>' +
+      '    </div>'
+    ).join(''),
+    '  </div>',
+    '</section>',
+
+    '<hr class="rule">',
+
+    // Section 3: Hospitals Preview
+    '<section>',
+    '  <div class="eyebrow">' + h.hospitalsEyebrow + '</div>',
+    '  <h2 class="section-title">' + h.hospitalsTitle + '</h2>',
+    '  <p class="section-intro">' + h.hospitalsIntro + '</p>',
+    '  <div class="grid">',
+    d().hospitalsSection.hospitals.map(hosp => 
+      '    <div class="panel">' +
+      '      <span class="tag good" style="margin-bottom:8px">' + hosp.accreditation + '</span>' +
+      '      <h3 style="margin:8px 0">' + hosp.name + '</h3>' +
+      '      <p style="font-size:14px;color:var(--muted);margin:0 0 12px">' + hosp.highlights + '</p>' +
+      '      <div class="small" style="color:var(--ink);border-top:1px solid var(--line);padding-top:8px">📍 ' + hosp.location + '</div>' +
+      '    </div>'
+    ).join(''),
+    '  </div>',
+    '  <div style="margin-top:16px"><button class="btn quiet" onclick="showPage(\'hospitals\')">' + (lang === "ar" ? "استكشف دليل المستشفيات والاعتمادات ←" : "Explore Hospital Directory & Accreditations →") + '</button></div>',
+    '</section>',
+
+    '<hr class="rule">',
+
+    // Section 4: Technology Preview
+    '<section>',
+    '  <div class="eyebrow">' + h.techEyebrow + '</div>',
+    '  <h2 class="section-title">' + h.techTitle + '</h2>',
+    '  <p class="section-intro">' + h.techIntro + '</p>',
+    '  <div class="grid-2">',
+    d().technologySection.categories.slice(0, 2).map(cat => 
+      '    <div class="panel">' +
+      '      <span class="tag warn" style="margin-bottom:8px">' + cat.manufacturers + '</span>' +
+      '      <h3>' + cat.title + '</h3>' +
+      '      <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.6">' + cat.details + '</p>' +
+      '    </div>'
+    ).join(''),
+    '  </div>',
+    '  <div style="margin-top:16px"><button class="btn quiet" onclick="showPage(\'technology\')">' + (lang === "ar" ? "قراءة معايير التقنيات والأجهزة المعتمدة ←" : "Read Technology & Device Standards →") + '</button></div>',
+    '</section>',
+
+    '<hr class="rule">',
+
+    // Section 5: Journey Roadmap (8 Steps preview)
+    '<section>',
+    '  <div class="eyebrow">' + h.journeyEyebrow + '</div>',
+    '  <h2 class="section-title">' + h.journeyTitle + '</h2>',
+    '  <p class="section-intro">' + h.journeyIntro + '</p>',
+    '  <div class="grid-2">',
+    d().journeySection.steps.map(st => 
+      '    <div class="step-box">' +
+      '      <div class="step-num">' + st.step + '</div>' +
+      '      <div class="step-content">' +
+      '        <strong>' + st.title + '</strong>' +
+      '        <p>' + st.desc + '</p>' +
+      '      </div>' +
+      '    </div>'
+    ).join(''),
+    '  </div>',
+    '</section>',
+
+    '<hr class="rule">',
+
+    // Section 6: Accommodation Preview
+    '<section>',
+    '  <div class="eyebrow">' + h.stayEyebrow + '</div>',
+    '  <h2 class="section-title">' + h.stayTitle + '</h2>',
+    '  <p class="section-intro">' + h.stayIntro + '</p>',
+    '  <div class="grid">',
+    d().accommodationSection.stayItems.map(item => 
+      '    <div class="panel" style="display:flex;flex-direction:column;justify-content:space-between">' +
+      '      <div>' +
+      '        <span class="tag good" style="margin-bottom:8px">' + item.distance + '</span>' +
+      '        <h3 style="margin:6px 0 10px">' + item.title + '</h3>' +
+      '        <p style="font-size:14px;color:var(--muted);margin:0 0 12px">' + item.details + '</p>' +
+      '      </div>' +
+      '      <div style="border-top:1px solid var(--line);padding-top:12px">' +
+      '        <strong style="color:var(--primary);display:block;margin-bottom:8px">' + item.price + '</strong>' +
+      '        <button class="btn quiet" style="padding:6px 12px;font-size:13px;width:100%" onclick="showPage(\'accommodation\')">' + (lang === "ar" ? "تفاصيل الإقامة والمرافق" : "Accommodation Details") + '</button>' +
+      '      </div>' +
+      '    </div>'
+    ).join(''),
+    '  </div>',
+    '</section>',
+
+    '<hr class="rule">',
+
+    // Section 7: FAQs
+    '<section>',
+    '  <div class="eyebrow">' + h.faqEyebrow + '</div>',
+    '  <h2 class="section-title">' + h.faqTitle + '</h2>',
+    '  <p class="section-intro">' + h.faqIntro + '</p>',
+    '  <div>',
+    d().faqsSection.faqs.slice(0, 4).map(f => 
+      '    <div class="faq-item">' +
+      '      <div class="faq-header" onclick="toggleFaqItem(this)">' +
+      '        <span>' + f.q + '</span>' +
+      '        <span class="faq-icon" style="transition:transform 0.2s">▼</span>' +
+      '      </div>' +
+      '      <div class="faq-body">' + f.a + '</div>' +
+      '    </div>'
+    ).join(''),
+    '  </div>',
+    '</section>',
+
+    '<hr class="rule">',
+
+    // Final CTA
+    '<section class="panel" style="background:var(--soft);text-align:center;padding:40px 24px">',
+    '  <h2 style="font-size:28px;margin:0 0 12px;color:var(--primary)">' + h.finalCtaTitle + '</h2>',
+    '  <p style="max-width:640px;margin:0 auto 24px;font-size:16px;color:var(--muted)">' + h.finalCtaDesc + '</p>',
+    '  <button class="btn" onclick="showPage(\'assessment\')">' + h.finalCtaBtn + '</button>',
+    '</section>',
+
+    '<div class="alert">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderSpecialtiesIndex() {
+  const list = d().specialtiesList;
+  return [
+    '<div class="eyebrow">' + d().nav.specialties + '</div>',
+    '<h1 class="section-title">' + (lang === "ar" ? "تخصصات جراحة وقسطرة القلب" : "Cardiac & Cardiothoracic Specialties") + '</h1>',
+    '<p class="section-intro">' + (lang === "ar" ? "نغطي التخصصات الدقيقة في أمراض وجراحة القلب بإشراف كبار الاستشاريين في مصر. اختر التخصص للاطلاع على التفاصيل الكاملة." : "Covering specialized cardiology and cardiothoracic surgery disciplines led by senior consultants in Egypt. Select a specialty to explore full clinical details.") + '</p>',
+    '<div class="grid">',
+    list.map(sp => 
+      '  <div class="card-link" onclick="showPage(\'specialty\', \'' + sp.id + '\')">' +
+      '    <div>' +
+      '      <span class="tag good" style="margin-bottom:8px">' + sp.enName + '</span>' +
+      '      <h3 style="margin:6px 0 10px">' + sp.name + '</h3>' +
+      '      <p style="font-size:14px;color:var(--muted);margin:0 0 14px;line-height:1.6">' + sp.desc + '</p>' +
+      '    </div>' +
+      '    <div style="border-top:1px solid var(--line);padding-top:10px;font-weight:600;font-size:13.5px;color:var(--primary)">' +
+      (lang === "ar" ? "قراءة الدليل السريري والمستندات ←" : "Read Clinical Guide & Documents →") +
+      '    </div>' +
+      '  </div>'
+    ).join(''),
+    '</div>',
+    '<div class="alert" style="margin-top:32px">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderSpecialtyDetail() {
+  const sp = d().specialtiesList.find(x => x.id === selectedSpecialtyId) || d().specialtiesList[0];
+  return [
+    '<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap">',
+    '  <button class="btn quiet" style="padding:4px 10px;font-size:12px" onclick="showPage(\'specialties\')">← ' + (lang === "ar" ? "جميع التخصصات" : "All Specialties") + '</button>',
+    '  <span class="tag good">' + sp.enName + '</span>',
+    '</div>',
+    '<h1 class="section-title">' + sp.name + '</h1>',
+    '<p class="section-intro">' + sp.overview + '</p>',
+
+    '<div class="columns">',
+    '  <div>',
+    '    <div class="panel" style="margin-bottom:24px">',
+    '      <h3>' + (lang === "ar" ? "دواعي الإجراء والحالات المستفيدة" : "Clinical Indications") + '</h3>',
+    '      <ul style="margin:0;padding-inline-start:20px;font-size:14.5px;color:var(--ink);line-height:1.75">',
+    sp.indications.map(ind => '<li>' + ind + '</li>').join(''),
+    '      </ul>',
+    '    </div>',
+
+    '    <div class="panel">',
+    '      <h3>' + (lang === "ar" ? "التقارير والمستندات المطلوبة للمراجعة" : "Required Medical Reports") + '</h3>',
+    '      <p style="font-size:13.5px;color:var(--muted);margin-bottom:12px">' + (lang === "ar" ? "تساعد هذه المستندات الفريق الجراحي على تقييم الحالة وصياغة الرأي المكتوب:" : "These reports assist the surgical board in forming an objective clinical opinion:") + '</p>',
+    '      <ul style="margin:0;padding-inline-start:20px;font-size:14.5px;color:var(--ink);line-height:1.75">',
+    sp.documentsRequired.map(doc => '<li>' + doc + '</li>').join(''),
+    '      </ul>',
+    '    </div>',
+    '  </div>',
+
+    '  <div>',
+    '    <div class="panel" style="margin-bottom:24px">',
+    '      <h3>' + (lang === "ar" ? "خطة التنسيق وفترة المكوث المقترحة" : "Coordination & Hospital Stay") + '</h3>',
+    '      <p style="font-size:14.5px;color:var(--ink);line-height:1.65;margin:0 0 16px">' + sp.journeySummary + '</p>',
+    '      <div class="notice" style="margin:0 0 16px">' + (lang === "ar" ? "يحدد الجراح المعالج إذن الطيران النهائي (Fit-to-Fly) بعد فحص ما قبل الخروج." : "The final Fit-to-Fly certificate is issued by the lead surgeon following discharge examination.") + '</div>',
+    '      <button class="btn" style="width:100%" onclick="showPage(\'assessment\')">' + (lang === "ar" ? "اطلب تقييمًا لحالتك في هذا التخصص" : "Request Assessment for this Specialty") + '</button>',
+    '    </div>',
+
+    '    <div class="panel">',
+    '      <h3>' + (lang === "ar" ? "أسئلة شائعة حول التخصص" : "Specialty FAQs") + '</h3>',
+    sp.faqs.map(f => 
+      '      <div style="margin-bottom:14px">' +
+      '        <strong style="display:block;font-size:14px;color:var(--primary);margin-bottom:4px">Q: ' + f.q + '</strong>' +
+      '        <p style="margin:0;font-size:13.5px;color:var(--muted)">' + f.a + '</p>' +
+      '      </div>'
+    ).join(''),
+    '    </div>',
+    '  </div>',
+    '</div>',
+
+    '<div class="alert" style="margin-top:24px">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderHospitals() {
+  const hs = d().hospitalsSection;
+  return [
+    '<div class="eyebrow">' + hs.eyebrow + '</div>',
+    '<h1 class="section-title">' + hs.title + '</h1>',
+    '<p class="section-intro">' + hs.desc + '</p>',
+    '<div class="notice">' + hs.disclaimer + '</div>',
+
+    '<div class="grid" style="margin:24px 0">',
+    hs.hospitals.map(hosp => 
+      '  <div class="panel" style="display:flex;flex-direction:column;justify-content:space-between">' +
+      '    <div>' +
+      '      <span class="tag good" style="margin-bottom:8px">' + hosp.accreditation + '</span>' +
+      '      <h3 style="margin:6px 0 4px">' + hosp.name + '</h3>' +
+      '      <span class="small muted" style="display:block;margin-bottom:12px">' + hosp.type + '</span>' +
+      '      <p style="font-size:14px;color:var(--ink);margin:0 0 14px;line-height:1.6">' + hosp.highlights + '</p>' +
+      '      <div style="border-top:1px solid var(--line);padding-top:10px;margin-bottom:12px">' +
+      '        <span class="small muted" style="display:block;font-weight:600;margin-bottom:4px">' + (lang === "ar" ? "التخصصات البارزة:" : "Prominent Specialties:") + '</span>' +
+      '        <ul style="margin:0;padding-inline-start:18px;font-size:13px;color:var(--muted)">' +
+      hosp.specialties.map(s => '<li>' + s + '</li>').join('') +
+      '        </ul>' +
+      '      </div>' +
+      '    </div>' +
+      '    <div style="border-top:1px solid var(--line);padding-top:10px;font-size:12.5px;color:var(--muted)">' +
+      '      📍 ' + hosp.location +
+      '    </div>' +
+      '  </div>'
+    ).join(''),
+    '</div>',
+
+    '<div class="panel" style="background:var(--soft);margin-top:24px">',
+    '  <h3>' + hs.doctorsStandardTitle + '</h3>',
+    '  <ul style="margin:0;padding-inline-start:20px;font-size:14.5px;color:var(--ink);line-height:1.8">',
+    hs.doctorsStandards.map(std => '<li>' + std + '</li>').join(''),
+    '  </ul>',
+    '</div>',
+
+    '<div class="alert">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderTechnology() {
+  const ts = d().technologySection;
+  return [
+    '<div class="eyebrow">' + ts.eyebrow + '</div>',
+    '<h1 class="section-title">' + ts.title + '</h1>',
+    '<p class="section-intro">' + ts.desc + '</p>',
+    '<div class="notice">' + ts.notice + '</div>',
+
+    '<div class="grid-2" style="margin:24px 0">',
+    ts.categories.map(cat => 
+      '  <div class="panel">' +
+      '    <span class="tag warn" style="margin-bottom:8px">' + cat.manufacturers + '</span>' +
+      '    <h3 style="margin:6px 0 10px">' + cat.title + '</h3>' +
+      '    <p style="margin:0;font-size:14.5px;color:var(--ink);line-height:1.65">' + cat.details + '</p>' +
+      '  </div>'
+    ).join(''),
+    '</div>',
+
+    '<div class="alert">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderJourney() {
+  const js = d().journeySection;
+  return [
+    '<div class="eyebrow">' + js.eyebrow + '</div>',
+    '<h1 class="section-title">' + js.title + '</h1>',
+    '<p class="section-intro">' + js.desc + '</p>',
+
+    '<div class="panel" style="margin:24px 0">',
+    '  <div class="grid-2">',
+    js.steps.map(st => 
+      '    <div class="step-box">' +
+      '      <div class="step-num">' + st.step + '</div>' +
+      '      <div class="step-content">' +
+      '        <strong>' + st.title + '</strong>' +
+      '        <p>' + st.desc + '</p>' +
+      '      </div>' +
+      '    </div>'
+    ).join(''),
+    '  </div>',
+    '</div>',
+
+    '<div style="text-align:center;margin:32px 0">',
+    '  <button class="btn" onclick="showPage(\'assessment\')">' + (lang === "ar" ? "ابدأ خطوتك الأولى واطلب تقييمًا طبيًا" : "Begin Your First Step: Request Medical Assessment") + '</button>',
+    '</div>',
+
+    '<div class="alert">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderAccommodation() {
+  const as = d().accommodationSection;
+  return [
+    '<div class="eyebrow">' + as.eyebrow + '</div>',
+    '<h1 class="section-title">' + as.title + '</h1>',
+    '<p class="section-intro">' + as.desc + '</p>',
+
+    '<div class="grid" style="margin-bottom:32px">',
+    as.services.map(srv => 
+      '  <div class="panel" style="margin-bottom:0">' +
+      '    <h3 style="font-size:17px">' + srv.title + '</h3>' +
+      '    <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.6">' + srv.desc + '</p>' +
+      '  </div>'
+    ).join(''),
+    '</div>',
+
+    '<h2 class="section-title">' + (lang === "ar" ? "أماكن الإقامة الفندقية المجهزة" : "Curated Recovery Residences") + '</h2>',
+    '<div class="grid">',
+    as.stayItems.map(item => 
+      '  <div class="panel" style="display:flex;flex-direction:column;justify-content:space-between">' +
+      '    <div>' +
+      '      <span class="tag good" style="margin-bottom:8px">' + item.distance + '</span>' +
+      '      <h3 style="margin:6px 0 10px">' + item.title + '</h3>' +
+      '      <p style="font-size:14px;color:var(--ink);margin:0 0 12px;line-height:1.6">' + item.details + '</p>' +
+      '      <div style="border-top:1px solid var(--line);padding-top:10px;margin-bottom:12px">' +
+      '        <span class="small muted" style="display:block;font-weight:600;margin-bottom:4px">' + (lang === "ar" ? "المزايا والتجهيزات:" : "Inclusions:") + '</span>' +
+      '        <span class="small" style="color:var(--muted)">' + item.amenities + '</span>' +
+      '      </div>' +
+      '    </div>' +
+      '    <div style="border-top:1px solid var(--line);padding-top:10px">' +
+      '      <strong style="color:var(--primary);display:block;margin-bottom:8px">' + item.price + '</strong>' +
+      '      <button class="btn quiet" style="width:100%;font-size:13px" onclick="showPage(\'assessment\')">' + (lang === "ar" ? "طلب حجز ضمن الباقة (معاينة)" : "Request in Package (Preview)") + '</button>' +
+      '    </div>' +
+      '  </div>'
+    ).join(''),
+    '</div>',
+
+    '<div class="notice" style="margin-top:20px">' + as.stayNotice + '</div>',
+    '<div class="alert">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderAssessment() {
+  const isAr = (lang === "ar");
+  return [
+    '<div class="columns">',
+    '  <section>',
+    '    <div class="eyebrow">' + (isAr ? "طلب تقييم مبدئي" : "Initial Assessment") + '</div>',
+    '    <h1 class="section-title">' + (isAr ? "طلب تقييم طبي أولي ودراسة الملف" : "Request an Initial Medical Assessment") + '</h1>',
+    '    <p class="section-intro">' + (isAr ? "شارك بيانات التواصل الأساسية. لا ترفع بيانات سريرية بالغة الحساسية عبر هذا النموذج الأولي. سيتواصل معك المنسق لترتيب القناة الآمنة." : "Start with basic contact details. Do not upload sensitive health data in this initial web form. Your dedicated coordinator will arrange an encrypted channel.") + '</p>',
+    '    <div class="alert">' + d().emergency + '</div>',
+    '    <div class="notice">' + (isAr ? "نموذج تجريبي فقط — لا يتم حفظ أو إرسال أي بيانات شخصية." : "Demonstration mockup only — no personal or medical data is submitted.") + '</div>',
+    '  </section>',
+
+    '  <form class="panel" onsubmit="event.preventDefault();document.getElementById(\'demoMsg\').classList.remove(\'hidden\')">',
+    '    <div class="field">',
+    '      <label>' + (isAr ? "الاسم الكامل للمريض" : "Patient Full Name") + ' *</label>',
+    '      <input required placeholder="' + (isAr ? "مثال: عبد الله أحمد" : "e.g. John Smith") + '">',
+    '    </div>',
+    '    <div class="field">',
+    '      <label>' + (isAr ? "بلد الإقامة" : "Country of Residence") + ' *</label>',
+    '      <select>',
+    (isAr ? [
+      "المملكة العربية السعودية",
+      "الإمارات العربية المتحدة",
+      "دولة الكويت",
+      "سلطنة عُمان",
+      "دولة قطر",
+      "مملكة البحرين",
+      "بلد آخر"
+    ] : [
+      "Saudi Arabia",
+      "United Arab Emirates",
+      "Kuwait",
+      "Oman",
+      "Qatar",
+      "Bahrain",
+      "Other Country"
+    ]).map(c => '<option>' + c + '</option>').join(''),
+    '      </select>',
+    '    </div>',
+    '    <div class="field">',
+    '      <label>' + (isAr ? "رقم الهاتف أو واتساب (مع مفتاح الدولة)" : "Phone / WhatsApp (with country code)") + ' *</label>',
+    '      <input required placeholder="+966 50 123 4567">',
+    '    </div>',
+    '    <div class="field">',
+    '      <label>' + (isAr ? "التخصص أو الإجراء المطلوب" : "Requested Specialty or Procedure") + '</label>',
+    '      <select>',
+    d().specialtiesList.map(s => '<option>' + s.name + '</option>').join(''),
+    '        <option>' + (isAr ? "غير متأكد — بناءً على دراسة التقرير" : "Not sure — based on clinical review") + '</option>',
+    '      </select>',
+    '    </div>',
+    '    <div class="field">',
+    '      <label>' + (isAr ? "احتياجات المرافق والإقامة" : "Companion & Stay Requirements") + '</label>',
+    '      <select>',
+    (isAr ? [
+      "مرافق واحد — جناح فندقي مجهز",
+      "أكثر من مرافق — شقة فندقية عائلية",
+      "المريض بمفرده — طلب مرافقة تمريضية"
+    ] : [
+      "1 Companion — Shared Recovery Suite",
+      "Family (2+ companions) — Family Apartment",
+      "Patient solo — Medical nurse escort requested"
+    ]).map(o => '<option>' + o + '</option>').join(''),
+    '      </select>',
+    '    </div>',
+    '    <label style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;margin:16px 0">',
+    '      <input type="checkbox" required style="margin-top:4px"> ' + (isAr ? "أوافق على التواصل معي بشأن طلبي واطلعت على سياسة الخصوصية." : "I agree to be contacted regarding my case and have reviewed the privacy policy."),
+    '    </label>',
+    '    <button class="btn" type="submit">' + (isAr ? "معاينة إرسال الطلب" : "Preview Request Submission") + '</button>',
+    '    <p id="demoMsg" class="alert hidden" style="margin-top:14px">' + (isAr ? "هذه معاينة تجريبية فقط: لم يتم حفظ أو نقل أي بيانات إلى أي خادم." : "This is a preview mockup only: no live case created and no data transmitted.") + '</p>',
+    '  </form>',
+    '</div>'
+  ].join("\n");
+}
+
+function renderFaqsPage() {
+  const fs = d().faqsSection;
+  return [
+    '<div class="eyebrow">' + fs.eyebrow + '</div>',
+    '<h1 class="section-title">' + fs.title + '</h1>',
+    '<p class="section-intro">' + fs.intro + '</p>',
+
+    '<div class="panel" style="margin:24px 0">',
+    fs.faqs.map(f => 
+      '    <div class="faq-item">' +
+      '      <div class="faq-header" onclick="toggleFaqItem(this)">' +
+      '        <span>' + f.q + '</span>' +
+      '        <span class="faq-icon" style="transition:transform 0.2s">▼</span>' +
+      '      </div>' +
+      '      <div class="faq-body">' + f.a + '</div>' +
+      '    </div>'
+    ).join(''),
+    '  </div>',
+
+    '<div class="alert">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderAbout() {
+  const ab = d().aboutPage;
+  return [
+    '<div class="eyebrow">' + ab.eyebrow + '</div>',
+    '<h1 class="section-title">' + ab.title + '</h1>',
+    '<p class="section-intro">' + ab.desc + '</p>',
+
+    '<div class="panel" style="margin-bottom:24px">',
+    '  <h3>' + ab.missionTitle + '</h3>',
+    '  <p style="font-size:15px;color:var(--ink);line-height:1.75;margin:0">' + ab.mission + '</p>',
+    '</div>',
+
+    '<div class="grid">',
+    ab.features.map(f => 
+      '  <div class="panel" style="margin-bottom:0">' +
+      '    <h3>' + f.title + '</h3>' +
+      '    <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.6">' + f.text + '</p>' +
+      '  </div>'
+    ).join(''),
+    '</div>',
+
+    '<div class="alert" style="margin-top:32px">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderContact() {
+  const cp = d().contactPage;
+  const isAr = (lang === "ar");
+  return [
+    '<div class="eyebrow">' + cp.eyebrow + '</div>',
+    '<h1 class="section-title">' + cp.title + '</h1>',
+    '<p class="section-intro">' + cp.desc + '</p>',
+
+    '<div class="columns">',
+    '  <div>',
+    '    <div class="panel" style="margin-bottom:20px">',
+    '      <span class="small muted" style="display:block;font-weight:600">' + cp.phoneLabel + '</span>',
+    '      <strong style="font-size:18px;display:block;margin:4px 0" dir="ltr">' + cp.phone + '</strong>',
+    '      <span class="small" style="color:var(--muted)">' + (isAr ? "متاح على مدار الساعة للمرضى والمرافقين" : "Available 24/7 for patient and companion inquiries") + '</span>',
+    '    </div>',
+
+    '    <div class="panel" style="margin-bottom:20px">',
+    '      <span class="small muted" style="display:block;font-weight:600">' + cp.emailLabel + '</span>',
+    '      <strong style="font-size:16px;display:block;margin:4px 0">' + cp.email + '</strong>',
+    '      <span class="small" style="color:var(--muted)">' + (isAr ? "لاستقبال التقارير الطبية واستفسارات التنسيق" : "For medical file summaries and coordination queries") + '</span>',
+    '    </div>',
+
+    '    <div class="panel">',
+    '      <span class="small muted" style="display:block;font-weight:600">' + cp.addressLabel + '</span>',
+    '      <strong style="font-size:16px;display:block;margin:4px 0">' + cp.address + '</strong>',
+    '      <span class="small" style="color:var(--muted)">' + (isAr ? "بالقرب من المستشفيات الشريكة" : "Strategically located near partner cardiac centers") + '</span>',
+    '    </div>',
+    '  </div>',
+
+    '  <form class="panel" onsubmit="event.preventDefault();alert(\'' + (isAr ? "هذه معاينة تجريبية فقط." : "Demonstration mockup only.") + '\')">',
+    '    <h3>' + cp.formTitle + '</h3>',
+    '    <div class="field">',
+    '      <label>' + (isAr ? "الاسم" : "Name") + '</label>',
+    '      <input required placeholder="' + (isAr ? "الاسم الكامل" : "Full name") + '">',
+    '    </div>',
+    '    <div class="field">',
+    '      <label>' + (isAr ? "الهاتف أو البريد" : "Phone or Email") + '</label>',
+    '      <input required placeholder="' + (isAr ? "رقم الاتصال" : "Contact details") + '">',
+    '    </div>',
+    '    <div class="field">',
+    '      <label>' + (isAr ? "الرسالة أو الاستفسار" : "Message") + '</label>',
+    '      <textarea required placeholder="' + (isAr ? "اكتب تفاصيل استفسارك هنا..." : "Type your query here...") + '"></textarea>',
+    '    </div>',
+    '    <button class="btn" type="submit">' + cp.sendBtn + '</button>',
+    '  </form>',
+    '</div>',
+
+    '<div class="alert" style="margin-top:24px">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+function renderPrivacy() {
+  const pp = d().privacyPage;
+  return [
+    '<div class="eyebrow">' + pp.eyebrow + '</div>',
+    '<h1 class="section-title">' + pp.title + '</h1>',
+    '<p class="section-intro">' + pp.intro + '</p>',
+    '<div class="panel">',
+    pp.sections.map(s => 
+      '  <div style="margin-bottom:20px">' +
+      '    <h3 style="font-size:17px;margin:0 0 6px">' + s.title + '</h3>' +
+      '    <p style="margin:0;font-size:14.5px;color:var(--muted);line-height:1.7">' + s.body + '</p>' +
+      '  </div>'
+    ).join(''),
+    '</div>'
+  ].join("\n");
+}
+
+function renderTerms() {
+  const tp = d().termsPage;
+  return [
+    '<div class="eyebrow">' + tp.eyebrow + '</div>',
+    '<h1 class="section-title">' + tp.title + '</h1>',
+    '<p class="section-intro">' + tp.intro + '</p>',
+    '<div class="panel">',
+    tp.sections.map(s => 
+      '  <div style="margin-bottom:20px">' +
+      '    <h3 style="font-size:17px;margin:0 0 6px">' + s.title + '</h3>' +
+      '    <p style="margin:0;font-size:14.5px;color:var(--muted);line-height:1.7">' + s.body + '</p>' +
+      '  </div>'
+    ).join(''),
+    '</div>'
+  ].join("\n");
+}
+
+function renderPortal() {
+  const p = portalData[lang];
+  return [
+    '<div class="eyebrow">' + p.title + '</div>',
+    '<h1 class="section-title">' + p.title + '</h1>',
+    '<p class="section-intro">' + p.desc + '</p>',
+    
+    '<div class="statrow">',
+    '  <div class="stat"><span>' + p.current + '</span><b>' + p.inReview + '</b></div>',
+    '  <div class="stat"><span>' + p.next + '</span><b>' + p.nextVal + '</b></div>',
+    '  <div class="stat"><span>' + p.documents + '</span><b>' + p.docsVal + '</b></div>',
+    '  <div class="stat"><span>' + p.messages + '</span><b>' + p.messagesVal + '</b></div>',
+    '</div>',
+    
+    '<div class="columns">',
+    '  <div class="panel">',
+    '    <h3>' + p.next + '</h3>',
+    '    <p style="line-height:1.6;font-size:14.5px;color:var(--ink)">' + p.nextDesc + '</p>',
+    '    <button class="btn secondary" onclick="showPage(\'journey\')">' + p.journeyBtn + '</button>',
+    '  </div>',
+    '  <div class="panel">',
+    '    <h3>' + p.companion + '</h3>',
+    '    <p style="line-height:1.6;font-size:14.5px;color:var(--ink)">' + p.companionDesc + '</p>',
+    '    <button class="btn quiet" onclick="alert(\'' + (lang === "ar" ? "معاينة دعوة مرافق — بدون اتصال بخادم." : "Preview companion invite — mockup only.") + '\')">' + p.companionBtn + '</button>',
+    '  </div>',
+    '</div>'
+  ].join("\n");
+}
+
+function renderOps() {
+  const o = opsData[lang];
+  const section = o.sections[opsSection];
+  let detail = '';
+
+  if (opsSection === 0) {
+    detail = [
+      '<h3>' + o.case + '</h3>',
+      '<div class="mini-grid">',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "معرّف الحالة" : "Case ID") + '</label><input value="' + o.caseId + '" readonly></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "منسق الحالة" : "Coordinator") + '</label><select>' + o.coordinators.map(c => '<option>' + c + '</option>').join('') + '</select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "الأولوية" : "Priority") + '</label><select>' + o.priorities.map(p => '<option>' + p + '</option>').join('') + '</select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "آخر تحديث" : "Last Updated") + '</label><input value="—" readonly></div>',
+      '</div>',
+      '<hr class="rule">',
+      '<h3>' + o.caseStageLabel + '</h3>',
+      '<p><span class="tag warn">' + o.stages[caseStage] + '</span></p>',
+      '<div class="progress"><span style="width:' + Math.round((caseStage + 1) / o.stages.length * 100) + '%"></span></div>',
+      '<div class="workspace-actions">',
+      '  <button class="btn" onclick="advanceCase()">' + o.advance + '</button>',
+      '  <button onclick="resetCase()">' + o.reset + '</button>',
+      '</div>',
+      '<div id="opsNotice" class="notice">' + o.stageGuard + '</div>'
+    ].join("\n");
+  } else if (opsSection === 1) {
+    detail = [
+      '<h3>' + section + '</h3>',
+      '<div class="mini-grid">',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "حالة المستندات" : "Document Completeness") + '</label><select>' + o.fileStatuses.map(s => '<option>' + s + '</option>').join('') + '</select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "المراجع المخوّل" : "Authorized Reviewer") + '</label><select>' + o.reviewers.map(r => '<option>' + r + '</option>').join('') + '</select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "حالة المراجعة" : "Review Status") + '</label><select>' + o.reviewStatuses.map(s => '<option>' + s + '</option>').join('') + '</select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "الملفات المرفقة" : "Attached Files") + '</label><input value="' + (lang === "ar" ? "لا توجد ملفات مرفقة" : "No files attached") + '" readonly></div>',
+      '</div>',
+      '<div class="alert">' + o.clinicalGate + '</div>',
+      '<div class="notice">' + o.demoOnly + '</div>'
+    ].join("\n");
+  } else if (opsSection === 2) {
+    detail = [
+      '<h3>' + section + '</h3>',
+      '<div class="mini-grid">',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "حالة مقدم الخدمة" : "Provider Status") + '</label><select>' + o.providerStatuses.map(s => '<option>' + s + '</option>').join('') + '</select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "حالة العرض" : "Quotation Status") + '</label><select>' + o.quoteStatuses.map(s => '<option>' + s + '</option>').join('') + '</select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "العملة" : "Currency") + '</label><select><option>EGP</option><option>USD</option><option>SAR</option><option>AED</option></select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "صلاحية العرض" : "Quote Expiry") + '</label><input type="date"></div>',
+      '</div>',
+      '<div class="notice">' + (lang === "ar" ? "يجب الإفصاح عن علاقة الشركة بالمستشفى وتوضيح ما يُدفع لكل جهة." : "Commercial relationships must be disclosed.") + '</div>'
+    ].join("\n");
+  } else if (opsSection === 3) {
+    detail = [
+      '<h3>' + section + '</h3>',
+      '<div class="mini-grid">',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "حالة الحجز" : "Booking Status") + '</label><select>' + o.bookingStatuses.map(s => '<option>' + s + '</option>').join('') + '</select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "تاريخ الوصول" : "Arrival Date") + '</label><input type="date"></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "الإقامة الفندقية" : "Accommodation") + '</label><select>' + o.stays.map(s => '<option>' + s + '</option>').join('') + '</select></div>',
+      '  <div class="mini-field"><label>' + (lang === "ar" ? "الانتقالات الطبية" : "Medical Transfers") + '</label><select>' + o.transfers.map(t => '<option>' + t + '</option>').join('') + '</select></div>',
+      '</div>',
+      '<h4 style="margin:16px 0 8px">' + o.readinessTitle + '</h4>',
+      o.checks.map(chk => '<label style="display:block;margin-bottom:6px"><input type="checkbox"> ' + chk + '</label>').join(''),
+      '<div class="alert">' + o.clinicalGate + '</div>'
+    ].join("\n");
+  } else if (opsSection === 4) {
+    detail = [
+      '<h3>' + section + '</h3>',
+      '<p>' + financeData[lang].desc + '</p>',
+      '<button class="btn secondary" onclick="showPage(\'finance\')">' + financeData[lang].title + '</button>',
+      '<div class="notice">' + (lang === "ar" ? "تُسجل مدفوعات المستشفى وتسويات الموردين بشكل منفصل." : "Hospital payments and supplier settlements are recorded separately.") + '</div>'
+    ].join("\n");
+  } else {
+    detail = [
+      '<h3>' + o.auditTitle + '</h3>',
+      '<div class="timeline">' + o.auditItems.map((x, i) => 
+        '<div class="event ' + (i ? 'pending' : '') + '"><h4>' + x + '</h4><p>' + (lang === "ar" ? "سجل توضيحي غير قابل للاعتماد" : "Illustrative, non-authoritative entry") + '</p></div>'
+      ).join('') + '</div>',
+      '<div class="notice">' + o.demoOnly + '</div>'
+    ].join("\n");
+  }
+
+  return [
+    '<div class="eyebrow">' + o.title + '</div>',
+    '<h1 class="section-title">' + o.title + '</h1>',
+    '<p class="section-intro">' + o.desc + '</p>',
+    '<div class="layout">',
+    '  <aside class="side">',
+    o.sections.map((x, i) => 
+      '    <button class="' + (i === opsSection ? 'active' : '') + '" onclick="selectOpsSide(' + i + ')">' + x + '</button>'
+    ).join(''),
+    '  </aside>',
+    '  <section>',
+    '    <div class="panel">',
+    '      <div class="head" style="padding-top:0">',
+    '        <div>',
+    '          <div class="eyebrow">' + section + '</div>',
+    '          <span class="muted small">' + o.caseId + '</span>',
+    '        </div>',
+    '        <span class="tag warn">' + o.status + '</span>',
+    '      </div>',
+    detail,
+    '      <div class="workspace-actions">',
+    '        <button onclick="showPage(\'finance\')">' + financeData[lang].title + '</button>',
+    '        <button onclick="showPage(\'journey\')">' + d().nav.journey + '</button>',
+    '      </div>',
+    '    </div>',
+    '  </section>',
+    '</div>'
+  ].join("\n");
+}
+
+function renderFinance() {
+  const f = financeData[lang];
+  const isAr = (lang === "ar");
+  const total = f.tableRows.reduce((acc, r) => acc + r[2], 0);
+
+  return [
+    '<div class="eyebrow">' + f.title + '</div>',
+    '<h1 class="section-title">' + f.title + '</h1>',
+    '<p class="section-intro">' + f.desc + '</p>',
+
+    // Currency Switcher
+    '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px">',
+    '  <div style="display:flex;align-items:center;gap:6px">',
+    '    <span style="font-size:13px;font-weight:600">' + (isAr ? "العملة المعروضة:" : "Display Currency:") + '</span>',
+    Object.keys(currencyRates).map(c => 
+      '    <button class="themebtn ' + (activeCurrency === c ? 'active' : '') + '" onclick="setCurrency(\'' + c + '\')">' + c + '</button>'
+    ).join(''),
+    '  </div>',
+    '  <button class="btn quiet" style="padding:6px 14px;font-size:13px" onclick="toggleFinanceDemo()">' + (financeDemo ? f.demoBtnHide : f.demoBtnShow) + '</button>',
+    '</div>',
+
+    financeDemo ? [
+      '<div class="statrow">',
+      '  <div class="stat"><span>' + f.revTitle + '</span><b>' + formatCurr(total) + '</b></div>',
+      '  <div class="stat"><span>' + f.directHosp + '</span><b>' + formatCurr(135000) + '</b></div>',
+      '  <div class="stat"><span>' + f.stayTransport + '</span><b>' + formatCurr(15450) + '</b></div>',
+      '  <div class="stat"><span>' + f.coordinationFee + '</span><b>' + formatCurr(18500) + '</b></div>',
+      '</div>',
+
+      '<div class="table-wrap">',
+      '  <table>',
+      '    <thead><tr>' + f.tableHead.map(h => '<th>' + h + '</th>').join('') + '</tr></thead>',
+      '    <tbody>',
+      f.tableRows.map(row => 
+        '      <tr>' +
+        '        <td><strong>' + row[0] + '</strong></td>' +
+        '        <td>' + row[1] + '</td>' +
+        '        <td><strong style="color:var(--primary)">' + formatCurr(row[2]) + '</strong></td>' +
+        '        <td><span class="tag ' + (row[3].includes("مباشر") || row[3].includes("Direct") ? "good" : "warn") + '">' + row[3] + '</span></td>' +
+        '      </tr>'
+      ).join(''),
+      '    </tbody>',
+      '  </table>',
+      '</div>'
+    ].join("\n") : '<div class="notice">' + f.note + '</div>',
+
+    '<div class="notice" style="margin-top:16px">' + f.currencyNotice + ' · ' + f.demoLabel + '</div>',
+    '<div class="alert">' + d().emergency + '</div>'
+  ].join("\n");
+}
+
+/* Master Nav & Header Render */
+function renderNav() {
+  const n = d().nav;
+  const isAr = (lang === "ar");
+
+  const navHtml = [
+    '<button class="nav-btn ' + (activePage === "home" ? "active" : "") + '" onclick="showPage(\'home\')">' + n.home + '</button>',
+
+    // Dropdown for specialties
+    '<div class="dropdown-wrap">',
+    '  <button class="nav-btn ' + (activePage.startsWith("specialt") ? "active" : "") + '" onclick="this.nextElementSibling.classList.toggle(\'show\')">',
+    n.specialties + ' ▾',
+    '  </button>',
+    '  <div class="dropdown-menu">',
+    '    <a href="javascript:void(0)" class="dropdown-item" onclick="showPage(\'specialties\')"><strong>' + (isAr ? "فهرس جميع التخصصات" : "All Specialties Overview") + '</strong></a>',
+    d().specialtiesList.map(s => 
+      '    <a href="javascript:void(0)" class="dropdown-item" onclick="showPage(\'specialty\', \'' + s.id + '\')">' + s.name + '</a>'
+    ).join(''),
+    '  </div>',
+    '</div>',
+
+    '<button class="nav-btn ' + (activePage === "hospitals" ? "active" : "") + '" onclick="showPage(\'hospitals\')">' + n.hospitals + '</button>',
+    '<button class="nav-btn ' + (activePage === "technology" ? "active" : "") + '" onclick="showPage(\'technology\')">' + n.technology + '</button>',
+    '<button class="nav-btn ' + (activePage === "journey" ? "active" : "") + '" onclick="showPage(\'journey\')">' + n.journey + '</button>',
+    '<button class="nav-btn ' + (activePage === "accommodation" ? "active" : "") + '" onclick="showPage(\'accommodation\')">' + n.accommodation + '</button>',
+    '<button class="nav-btn ' + (activePage === "assessment" ? "active" : "") + '" onclick="showPage(\'assessment\')">' + n.assessment + '</button>',
+    '<button class="nav-btn ' + (activePage === "portal" ? "active" : "") + '" onclick="showPage(\'portal\')">' + n.portal + '</button>',
+    '<button class="nav-btn ' + (activePage === "ops" ? "active" : "") + '" onclick="showPage(\'ops\')">' + n.ops + '</button>',
+    '<button class="nav-btn ' + (activePage === "finance" ? "active" : "") + '" onclick="showPage(\'finance\')">' + n.finance + '</button>'
+  ].join('');
+
+  document.getElementById("navLinksContainer").innerHTML = navHtml;
+  document.getElementById("mobileMenuBtn").textContent = (isAr ? "القائمة الرئيسية ☰" : "Main Navigation ☰");
+}
+
+/* Master Footer Render */
+function renderFooter() {
+  const n = d().nav;
+  const isAr = (lang === "ar");
+
+  const footerHtml = [
+    '<div class="footer-grid">',
+    '  <div class="footer-col">',
+    '    <h5>' + d().brandName + '</h5>',
+    '    <p style="margin:0 0 12px;line-height:1.6">' + (isAr ? "منصة تنسيق متخصصة في جراحات وقسطرة القلب في مصر، تربط المرضى الدوليين بأبرز المستشفيات المعتمدة وتقدم خدمات الضيافة والنقل المتكاملة." : "Specialized coordination platform for cardiac surgery and cardiology in Egypt, bridging international patients with accredited hospitals, recovery suites, and comprehensive travel logistics.") + '</p>',
+    '    <span class="small muted">© 2026 ' + d().brandName + '. ' + (isAr ? "جميع الحقوق محفوظة." : "All rights reserved.") + '</span>',
+    '  </div>',
+
+    '  <div class="footer-col">',
+    '    <h5>' + (isAr ? "التخصصات الجراحية" : "Cardiac Specialties") + '</h5>',
+    d().specialtiesList.map(s => 
+      '    <a href="javascript:void(0)" onclick="showPage(\'specialty\', \'' + s.id + '\')">' + s.name + '</a>'
+    ).join(''),
+    '  </div>',
+
+    '  <div class="footer-col">',
+    '    <h5>' + (isAr ? "الخدمات والرحلة" : "Services & Journey") + '</h5>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'hospitals\')">' + n.hospitals + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'technology\')">' + n.technology + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'journey\')">' + n.journey + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'accommodation\')">' + n.accommodation + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'assessment\')">' + n.assessment + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'portal\')">' + n.portal + '</a>',
+    '  </div>',
+
+    '  <div class="footer-col">',
+    '    <h5>' + (isAr ? "معلومات والسياسات" : "Information & Legal") + '</h5>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'about\')">' + n.about + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'contact\')">' + n.contact + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'faqs\')">' + n.faqs + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'privacy\')">' + n.privacy + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'terms\')">' + n.terms + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'ops\')">' + n.ops + '</a>',
+    '    <a href="javascript:void(0)" onclick="showPage(\'finance\')">' + n.finance + '</a>',
+    '  </div>',
+    '</div>',
+
+    '<div class="footer-bottom">',
+    '  <span>' + d().footerNote + '</span>',
+    '  <span>' + (isAr ? "IBM Plex Sans Arabic · Readex Pro · Noto Kufi Arabic" : "IBM Plex Sans · Editorial System Typography") + '</span>',
+    '</div>'
+  ].join('');
+
+  document.getElementById("mainFooter").innerHTML = footerHtml;
+}
+
+/* Main Master Render */
+function render() {
+  const cur = d();
+  document.getElementById("topLabel").textContent = cur.topLabel;
+  document.getElementById("brandName").textContent = cur.brandName;
+  document.getElementById("brandSub").textContent = cur.brandSub;
+  document.getElementById("modeTag").textContent = cur.modeTag;
+  document.getElementById("headerCta").textContent = cur.headerCta;
+  document.getElementById("langBtn").textContent = (lang === "ar" ? "English" : "العربية");
+  document.getElementById("nileBtn").textContent = (lang === "ar" ? "أخضر النيل" : "Nile Green");
+  document.getElementById("editorialBtn").textContent = (lang === "ar" ? "تحريري طبي" : "Medical Editorial");
+
+  renderNav();
+  renderFooter();
+
+  const views = {
+    home: renderHome,
+    specialties: renderSpecialtiesIndex,
+    specialty: renderSpecialtyDetail,
+    hospitals: renderHospitals,
+    technology: renderTechnology,
+    journey: renderJourney,
+    accommodation: renderAccommodation,
+    assessment: renderAssessment,
+    about: renderAbout,
+    contact: renderContact,
+    faqs: renderFaqsPage,
+    privacy: renderPrivacy,
+    terms: renderTerms,
+    portal: renderPortal,
+    ops: renderOps,
+    finance: renderFinance
+  };
+
+  const renderFn = views[activePage] || renderHome;
+  document.getElementById("content").innerHTML = renderFn();
+}
+
+// Initial render
+render();
+
+</script>
+</body>
+</html>
